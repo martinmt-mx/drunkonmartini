@@ -1,0 +1,304 @@
+/* drunkonmartini — internet nocturno.
+   Cada lado tiene un solo color de acento. Para una nueva era, cambia --accent. */
+
+:root {
+  --bg: #07070a;
+  --panel: #0d0d12;
+  --fg: #e9e6e1;
+  --dim: #7a7883;
+  --line: #22222b;
+  --accent: #ff2a3d;          /* Lado A: rojo neón */
+  --accent-soft: rgb(255 42 61 / 0.14);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --mono: 'Space Mono', ui-monospace, monospace;
+  --pixel: 'VT323', ui-monospace, monospace;
+  color-scheme: dark;
+}
+
+:root[data-side='b'] {
+  --accent: #ffb000;          /* Lado B: ámbar de monitor CRT */
+  --accent-soft: rgb(255 176 0 / 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 56px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 14px/1.6 var(--mono);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s;
+}
+
+a { color: var(--fg); text-underline-offset: 3px; text-decoration-color: var(--accent); }
+a:hover { color: var(--accent); }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+:focus-visible { outline: 1px dashed var(--accent); outline-offset: 3px; }
+::selection { background: var(--accent); color: var(--bg); }
+
+.dim { color: var(--dim); }
+.accent { color: var(--accent); }
+.pixel { font-family: var(--pixel); font-size: 1.25em; letter-spacing: 0.02em; line-height: 1; }
+.serif { font-family: var(--serif); font-weight: 400; }
+
+/* Scanlines + viñeta, por encima de todo pero sin bloquear clicks */
+.crt {
+  position: fixed; inset: 0; pointer-events: none; z-index: 100;
+  background:
+    repeating-linear-gradient(to bottom, rgb(255 255 255 / 0.025) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at center, transparent 55%, rgb(0 0 0 / 0.55));
+}
+
+/* ── Barra de menú ─────────────────────────────── */
+.menubar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 24px;
+  height: 40px; padding: 0 16px;
+  background: rgb(7 7 10 / 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.menubar-brand { display: flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 700; }
+.glass { width: 16px; height: 16px; color: var(--accent); transition: color 0.4s; }
+.menubar-items { display: flex; gap: 16px; }
+.menubar-items button, .menubar-items a { color: var(--dim); text-decoration: none; }
+.menubar-items button:hover, .menubar-items a:hover { color: var(--fg); }
+.menubar-items .on { color: var(--accent); }
+.menubar-status { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+.np { color: var(--accent); max-width: 22ch; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* ── Layout ────────────────────────────────────── */
+.page { max-width: 960px; margin: 0 auto; padding: 0 16px 140px; }
+
+/* ── Hero ──────────────────────────────────────── */
+.hero { padding: 96px 0 56px; }
+.hero-kicker { color: var(--dim); margin: 0 0 20px; }
+.hero-name {
+  font: italic 400 clamp(56px, 13vw, 148px)/0.88 var(--serif);
+  letter-spacing: -0.035em;
+  margin: 0;
+  text-shadow: 0 0 40px var(--accent-soft);
+}
+.hero-name .accent { font-style: normal; transition: color 0.4s; }
+.hero-tagline { min-height: 1.6em; margin: 24px 0 48px; color: var(--dim); font-size: 15px; }
+.caret { color: var(--accent); animation: blink 1s steps(1) infinite; margin-left: 2px; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Selector tipo cassette */
+.cassette { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 560px; }
+.cassette-side {
+  position: relative; text-align: left;
+  padding: 16px 18px 52px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  transition: border-color 0.25s, transform 0.25s;
+}
+.cassette-side:hover { border-color: var(--dim); transform: translateY(-2px); }
+.cassette-side.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 32px var(--accent-soft); }
+.cassette-label { display: block; color: var(--dim); }
+.cassette-side.on .cassette-label { color: var(--accent); }
+.cassette-role { display: block; font: italic 28px/1.1 var(--serif); margin-top: 4px; }
+.cassette-reels { position: absolute; left: 18px; right: 18px; bottom: 14px; display: flex; justify-content: space-between; }
+.cassette-reels i {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px dashed var(--dim);
+}
+.cassette-side.on .cassette-reels i { border-color: var(--accent); animation: spin 3s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Ventanas ──────────────────────────────────── */
+.side-content { animation: fade-in 0.5s ease both; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(8px); } }
+.side-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.span-2 { grid-column: span 2; }
+
+.win { border: 1px solid var(--line); background: var(--panel); min-width: 0; }
+.win-bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 6px 12px; border-bottom: 1px solid var(--line);
+  font-size: 12px; color: var(--dim);
+}
+.win-dots { display: flex; gap: 5px; }
+.win-dots i { width: 8px; height: 8px; border: 1px solid var(--dim); }
+.win-dots i:first-child { background: var(--accent); border-color: var(--accent); }
+.win-title { color: var(--fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.win-aside { margin-left: auto; white-space: nowrap; }
+.win-body { padding: 20px; }
+
+.bio { margin: 0; max-width: 62ch; font-size: 15px; }
+
+.eras { display: flex; flex-wrap: wrap; gap: 8px 28px; list-style: none; margin: 20px 0 0; padding: 0; color: var(--dim); }
+.eras li::before { content: '○ '; }
+.eras li.current { color: var(--accent); }
+.eras li.current::before { content: '● '; animation: blink 1.6s steps(1) infinite; }
+
+/* ── Discografía ───────────────────────────────── */
+.releases { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; list-style: none; margin: 0; padding: 0; }
+.release { display: flex; flex-direction: column; gap: 6px; width: 100%; text-align: left; }
+.release .cover { transition: transform 0.25s, box-shadow 0.25s; }
+.release:hover .cover { transform: translateY(-3px); }
+.release.on .cover { box-shadow: 0 0 0 1px var(--accent), 0 12px 40px var(--accent-soft); }
+.release-title { font: italic 20px/1.1 var(--serif); }
+.release-meta { font-size: 12px; }
+
+.cover {
+  position: relative; display: grid; place-items: center;
+  aspect-ratio: 1; width: 100%;
+  overflow: hidden;
+}
+.cover::after {  /* textura de escaneo sobre la portada */
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.18) 0 1px, transparent 1px 3px);
+}
+.cover-mark { font-size: 64px; color: rgb(255 255 255 / 0.85); mix-blend-mode: overlay; }
+.cover.big { width: 120px; flex: none; }
+.cover.big .cover-mark { font-size: 48px; }
+
+.tracklist-head { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
+.tracklist-head h3 { font-size: 36px; font-style: italic; margin: 0 0 6px; line-height: 1; }
+.tracklist-head p { margin: 0; }
+
+.tracklist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.tracklist li { border-bottom: 1px solid var(--line); }
+.row { display: flex; align-items: center; gap: 16px; width: 100%; padding: 10px 4px; text-align: left; }
+.row:hover { background: var(--accent-soft); }
+.row-idx { width: 2ch; color: var(--dim); }
+.row-title { flex: 1; }
+.tracklist li.playing .row-title, .tracklist li.playing .row-idx { color: var(--accent); }
+
+/* ── Beats ─────────────────────────────────────── */
+.filters { display: flex; gap: 8px; margin-bottom: 12px; }
+.filters input { flex: 1; }
+.input {
+  width: 100%;
+  background: var(--bg); color: var(--fg);
+  border: 1px solid var(--line);
+  padding: 8px 10px; font: inherit; border-radius: 0;
+}
+.input:focus { outline: none; border-color: var(--accent); }
+select.input { width: auto; }
+textarea.input { resize: vertical; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.chip { padding: 2px 10px; border: 1px solid var(--line); color: var(--dim); font-size: 12px; }
+.chip:hover { color: var(--fg); border-color: var(--dim); }
+.chip.on { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+
+.beats { border-top: 1px solid var(--line); }
+.beats-head, .beat {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 2fr) 56px 72px minmax(0, 1.5fr) auto;
+  align-items: center; gap: 12px;
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.beats-head { font-size: 15px; }
+.beat:hover { background: var(--accent-soft); }
+.beat.playing .beat-title { color: var(--accent); }
+.beat-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.beat-moods { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.play {
+  display: grid; place-items: center;
+  width: 28px; height: 28px;
+  border: 1px solid var(--line); font-size: 10px;
+}
+.play:hover, .beat.playing .play { border-color: var(--accent); color: var(--accent); }
+.play.big { width: 36px; height: 36px; flex: none; }
+
+.license { font-size: 12px; padding: 4px 10px; border: 1px solid var(--accent); color: var(--accent); white-space: nowrap; }
+.license:hover { background: var(--accent); color: var(--bg); }
+.empty { padding: 20px 4px; margin: 0; }
+
+/* ── Contacto ──────────────────────────────────── */
+.contact { margin-top: 64px; }
+.form { display: grid; gap: 14px; }
+.form label { display: grid; gap: 4px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 12px; }
+.btn { padding: 8px 16px; border: 1px solid var(--line); }
+.btn:hover { border-color: var(--fg); }
+.btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 700; }
+.btn.primary:hover { filter: brightness(1.15); }
+.btn:disabled { opacity: 0.6; cursor: wait; }
+.errors { margin: 0; padding-left: 18px; color: var(--accent); font-size: 12px; }
+.sent p { margin: 0 0 8px; }
+.sent .btn { margin-top: 8px; }
+
+/* ── Footer ────────────────────────────────────── */
+.footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line); display: grid; gap: 20px; }
+.socials { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; margin: 0; padding: 0; }
+.socials a { text-decoration: none; color: var(--dim); }
+.socials a:hover { color: var(--accent); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge {  /* botones 88x31 de los 2000s */
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  width: 88px; height: 31px;
+  font-size: 9px; line-height: 1.1; text-align: center;
+  border: 1px solid var(--line); color: var(--dim);
+  background: linear-gradient(var(--panel), var(--bg));
+}
+.badge b { color: var(--accent); }
+.badge.counter { flex-direction: column; gap: 0; }
+.footer p { margin: 0; }
+
+/* ── Reproductor ───────────────────────────────── */
+.player {
+  position: fixed; left: 50%; bottom: 16px; z-index: 60;
+  transform: translateX(-50%);
+  width: min(720px, calc(100% - 32px));
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 14px;
+  background: rgb(13 13 18 / 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 40px var(--accent-soft), 0 20px 40px rgb(0 0 0 / 0.6);
+  animation: rise 0.35s ease both;
+}
+/* El reproductor conserva el color del lado del track que suena */
+.player.side-a { --accent: #ff2a3d; --accent-soft: rgb(255 42 61 / 0.14); }
+.player.side-b { --accent: #ffb000; --accent-soft: rgb(255 176 0 / 0.12); }
+@keyframes rise { from { opacity: 0; transform: translate(-50%, 16px); } }
+.viz { color: var(--accent); width: 96px; height: 36px; flex: none; }
+.player .play { border-color: var(--accent); color: var(--accent); }
+.player-info { flex: 1; min-width: 0; }
+.player-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; }
+.tag { margin-left: 8px; padding: 0 5px; border: 1px solid var(--line); color: var(--dim); font-size: 13px; }
+.progress { height: 2px; margin-top: 8px; background: var(--line); }
+.progress i { display: block; height: 100%; background: var(--accent); }
+.player-time { color: var(--dim); white-space: nowrap; }
+.player-close { color: var(--dim); font-size: 20px; line-height: 1; padding: 0 2px; }
+.player-close:hover { color: var(--fg); }
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 720px) {
+  .menubar { gap: 12px; }
+  .menubar-status .np, .menubar-status .dim { display: none; }
+  .hero { padding: 64px 0 40px; }
+  .side-grid { grid-template-columns: 1fr; }
+  .span-2 { grid-column: auto; }
+  .win-body { padding: 16px; }
+  .form-row { grid-template-columns: 1fr; }
+  .beats-head { display: none; }
+  .beat { grid-template-columns: 36px minmax(0, 1fr) auto; row-gap: 2px; }
+  .beat > .pixel { display: none; }
+  .beat-moods { grid-column: 2; grid-row: 2; }
+  .license { grid-row: span 2; }
+  .tracklist-head { flex-direction: column; align-items: flex-start; }
+  .viz, .player-time { display: none; }
+}
+@media (max-width: 420px) {
+  .menubar-brand .dim, .menubar-status { display: none; }
+  .menubar-items { margin-left: auto; gap: 12px; }
+  .cassette-role { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}

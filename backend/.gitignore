@@ -1,0 +1,23 @@
+# Secretos: nunca subir la llave que descifra config/credentials.yml.enc
+/config/master.key
+/config/credentials/*.key
+
+# Variables de entorno
+/.env*
+
+# Bases de datos, logs, temporales y archivos subidos
+/db/*.sqlite3
+/db/*.sqlite3-*
+/storage/*
+!/storage/.keep
+/log/*
+!/log/.keep
+/tmp/*
+!/tmp/.keep
+/tmp/pids/*
+!/tmp/pids/.keep
+/tmp/storage/*
+!/tmp/storage/.keep
+
+/.bundle
+/vendor/bundle

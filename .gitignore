@@ -1,0 +1,6 @@
+# Cada app tiene su propio .gitignore (backend/ y frontend/); esto es una red de seguridad.
+*.key
+.env*
+node_modules/
+.DS_Store
+Thumbs.db
