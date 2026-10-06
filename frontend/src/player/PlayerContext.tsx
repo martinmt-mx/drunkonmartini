@@ -11,7 +11,10 @@ type PlayerState = {
   analyser: AnalyserNode | null
   play: (track: Playable) => void
   toggle: () => void
+  /** Detiene el audio pero deja la barra visible (se usa cuando termina una canción). */
   stop: () => void
+  /** Detiene el audio y oculta la barra del reproductor (botón ✕). */
+  close: () => void
 }
 
 const PlayerCtx = createContext<PlayerState | null>(null)
@@ -30,6 +33,12 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     setPlaying(false)
     setTime(0)
   }, [])
+
+  const close = useCallback(() => {
+    requestId.current++ // si había un track cargando, que ya no empiece a sonar
+    stop()
+    setCurrent(null)
+  }, [stop])
 
   const play = useCallback((track: Playable) => {
     stop()
@@ -83,6 +92,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
         play,
         toggle,
         stop,
+        close,
       }}
     >
       {children}
