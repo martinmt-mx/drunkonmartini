@@ -37,16 +37,13 @@ shared:
 
     # Jeune
     - spotify: 0bqu72EX1yqhjEMy1UWv0d   # BLACK WIDOW
-      artists: Jeune
-      released: 2025-09-06
+      apple: 1833796841
     - spotify: 0s9l0EQmds60BEfTk2Jlry   # LONELY
-      artists: Jeune
-      released: 2026-02-05
+      apple: 1869094146
     - spotify: 7BVTeepbhCki0r7yEUmBgN   # Otro Tema
       apple: 1869094160
     - spotify: 4XuLlXELFyjnsCR51WnPot   # LIVE MY LIFE
-      artists: Jeune
-      released: 2026-02-05
+      apple: 1869094149
 
     # PandaCano
     - spotify: 4SGaU7b32xm9XOt1x3U3QA   # Domingo Por La Noche
@@ -54,8 +51,7 @@ shared:
     - spotify: 57UIRcwlkM9jfbjjPnqlT9   # Labios Carmesí
       apple: 6788219701
     - spotify: 5SoKTZrAQEstcoDnr5ubeS   # Michael Scott
-      artists: PandaCano, Fery
-      released: 2025-09-04
+      apple: 1831853887
 
     # Kiatra
     - spotify: 6hZUp1aRe0bUKpBgmW1EA8   # Momentum
@@ -63,8 +59,7 @@ shared:
 
     # W.Ortiz
     - spotify: 4mT60kIbYc7AyfnmHQKCd9   # Blessed
-      artists: W.Ortiz, EMEH.
-      released: 2026-08-27
+      apple: 6802462911
     - spotify: 14ReZNHcLhOWHIT1mgkDea   # Messi Bunker Sesion #28
       apple: 6793295339
 
@@ -86,5 +81,4 @@ shared:
     - spotify: 3sow1G6C65FaXS8medZWnG   # San Andrés
       apple: 6776245782
     - spotify: 1J3wGG7gHa0BeZUfTMTarN   # INNEDIT
-      artists: Cotxrrito, Beto Reyes
-      released: 2025-12-17
+      apple: 1862659650

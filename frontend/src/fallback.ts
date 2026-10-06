@@ -119,12 +119,12 @@ export const fallbackCredits: Credit[] = [
   {
     "id": 11,
     "title": "Blessed",
-    "artists": "W.Ortiz, EMEH.",
+    "artists": "W. Ortiz & EMEH.",
     "role": "producción",
     "release_date": "2026-08-27",
-    "artwork_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e7ae7c8e2d92822236d10cc9",
-    "preview_url": null,
-    "apple_url": null,
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ce/61/91/ce6191c2-d7b0-5fd4-9062-259381eb353f/1963624925212_cover.png/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/40/b2/6c/40b26c6c-62ec-b8a5-cb71-f4dd17754eb1/mzaf_12562499338532986569.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/blessed/6802462909?i=6802462911&uo=4",
     "spotify_url": "https://open.spotify.com/track/4mT60kIbYc7AyfnmHQKCd9"
   },
   {
@@ -199,9 +199,9 @@ export const fallbackCredits: Credit[] = [
     "artists": "Jeune",
     "role": "producción",
     "release_date": "2026-02-05",
-    "artwork_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e020ea770e3f4a3e754cbffea22",
-    "preview_url": null,
-    "apple_url": null,
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/67/20/d06720c5-ab69-abbb-eb5f-cc14a83d383b/199891387724_cover.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7a/2d/46/7a2d46dc-e79f-0207-091f-72b69f033e5e/mzaf_4995520592407451345.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/lonely/1869093810?i=1869094146&uo=4",
     "spotify_url": "https://open.spotify.com/track/0s9l0EQmds60BEfTk2Jlry"
   },
   {
@@ -210,20 +210,20 @@ export const fallbackCredits: Credit[] = [
     "artists": "Jeune",
     "role": "producción",
     "release_date": "2026-02-05",
-    "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020ea770e3f4a3e754cbffea22",
-    "preview_url": null,
-    "apple_url": null,
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/67/20/d06720c5-ab69-abbb-eb5f-cc14a83d383b/199891387724_cover.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/52/c7/ed/52c7ed7f-2589-d5c6-883e-5589a462f3f5/mzaf_14847832687717242180.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/live-my-life/1869093810?i=1869094149&uo=4",
     "spotify_url": "https://open.spotify.com/track/4XuLlXELFyjnsCR51WnPot"
   },
   {
     "id": 18,
-    "title": "INNEDIT",
-    "artists": "Cotxrrito, Beto Reyes",
+    "title": "INNEDIT (feat. Beto Reyes)",
+    "artists": "Cotxrrito",
     "role": "producción",
     "release_date": "2025-12-17",
-    "artwork_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0221a7ead3549b574003a7d9dc",
-    "preview_url": null,
-    "apple_url": null,
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ef/f3/56/eff3560c-0153-d2e6-9a06-44e2bc133817/artwork.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/19/3d/ef/193def70-aafe-67be-d915-ec58dbecf780/mzaf_13667298183099937074.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/innedit-feat-beto-reyes/1862659589?i=1862659650&uo=4",
     "spotify_url": "https://open.spotify.com/track/1J3wGG7gHa0BeZUfTMTarN"
   },
   {
@@ -232,20 +232,20 @@ export const fallbackCredits: Credit[] = [
     "artists": "Jeune",
     "role": "producción",
     "release_date": "2025-09-06",
-    "artwork_url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021c35c6e48f249b18d3449a4f",
-    "preview_url": null,
-    "apple_url": null,
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3d/8d/af/3d8dafd0-a577-7cb4-063c-2f2a888cca18/199502237875_cover.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/69/9e/d1/699ed183-a508-e052-f536-aee0e1e0907f/mzaf_11948199989726084403.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/black-widow/1833796840?i=1833796841&uo=4",
     "spotify_url": "https://open.spotify.com/track/0bqu72EX1yqhjEMy1UWv0d"
   },
   {
     "id": 9,
     "title": "Michael Scott",
-    "artists": "PandaCano, Fery",
+    "artists": "PandaCano & Fery",
     "role": "producción",
     "release_date": "2025-09-04",
-    "artwork_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e022e57af2aa0864a782682b68a",
-    "preview_url": null,
-    "apple_url": null,
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c9/8c/42/c98c42d4-c2ab-6325-0734-3efcc42b85d1/95632.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f5/bb/87/f5bb8748-7fb2-9dac-3ae6-38c75b2148d7/mzaf_16616140474502131026.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/michael-scott/1831853885?i=1831853887&uo=4",
     "spotify_url": "https://open.spotify.com/track/5SoKTZrAQEstcoDnr5ubeS"
   },
   {
