@@ -59,4 +59,20 @@ se reproduce el archivo real.
 - `GET  /api/releases`: releases con sus tracks
 - `GET  /api/beats`: beats disponibles
 - `GET  /api/credits`: canciones de otros artistas donde participé en la producción
-- `POST /api/messages`: `{ message: { name, email, body, kind } }`, kind ∈ booking · beat · colab · guestbook
+- `POST /api/messages`: `{ message: { name, email, body, kind } }`, kind ∈ booking · beat · colab · guestbook.
+  Cada mensaje se guarda y se manda por correo; máximo 5 cada 10 minutos por IP, y un campo trampa
+  invisible descarta a los bots.
+
+## Producción (Render, plan gratis)
+
+En producción es **un solo servicio**: Rails sirve la API y también la página de React ya compilada
+(en `public/`). El `Dockerfile` lo arma en tres etapas: compila React con Node, instala las gemas y
+construye la imagen final con la base de datos ya llena (`db:prepare` + `music:sync`).
+
+Como el plan gratis de Render no tiene disco permanente, la base se reconstruye en cada deploy. No se
+pierde nada importante: la música y los beats vuelven a cargarse, y los mensajes del formulario llegan
+por correo.
+
+Para publicar: Render → **New → Blueprint** → elegir este repo. `render.yaml` crea el servicio y pide
+`GMAIL_APP_PASSWORD`, una [contraseña de aplicación de Google](https://myaccount.google.com/apppasswords)
+(requiere la verificación en 2 pasos). Sin ella, el sitio funciona pero los mensajes no se envían.

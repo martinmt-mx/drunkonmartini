@@ -28,4 +28,6 @@ test:
 # ensure the database is located in a persisted volume.
 production:
   <<: *default
-  # database: path/to/persistent/storage/production.sqlite3
+  # En Render (plan gratis) el disco se borra en cada deploy: la base se reconstruye
+  # al construir la imagen (seeds + music:sync), así que no se pierde nada importante.
+  database: storage/production.sqlite3

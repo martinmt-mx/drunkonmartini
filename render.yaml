@@ -1,0 +1,19 @@
+# Blueprint de Render: describe el servicio para crearlo con un clic
+# (Render → New → Blueprint → elegir este repo).
+services:
+  - type: web
+    name: drunkonmartini
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /up
+    autoDeploy: true # cada merge a main publica solo
+    envVars:
+      - key: SECRET_KEY_BASE
+        generateValue: true # Render inventa una clave secreta segura
+      - key: GMAIL_USERNAME
+        value: martinimusic.prod@gmail.com
+      - key: CONTACT_EMAIL
+        value: martinimusic.prod@gmail.com
+      - key: GMAIL_APP_PASSWORD
+        sync: false # Render la pide al crear el servicio; nunca va en el repo
