@@ -1,6 +1,6 @@
 # drunkonmartini
 
-Sitio de artista + productor. **Lado A** = canciones (r&b nocturno), **Lado B** = beats.
+Sitio de artista + productor. **Lado A** = canciones (R&B experimental), **Lado B** = beats y créditos de producción.
 Estética: internet nocturno minimalista (ventanas de OS viejo, scanlines, un solo color neón por lado).
 
 ```

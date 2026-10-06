@@ -8,14 +8,14 @@ export const profile = {
     a: {
       label: 'Lado A',
       role: 'Artista',
-      tagline: 'r&b nocturno para cuando ya cerraron el bar',
-      bio: 'Canto sobre lo que pasa después de medianoche: neones, llamadas que no contesto y ciudades vistas desde el asiento del copiloto. Ahorita el sonido está cambiando. Lo que sigue no se parece a lo de antes.',
+      tagline: 'escribo, canto y produzco lo que siento',
+      bio: 'Soy Martini, artista mexicano. Escribo, canto y produzco mis canciones: R&B con atmósferas experimentales, voces suaves y producción que juega con texturas y espacios. Debuté con “Rendido” (2025) y este año saqué el EP “Todo Bien?”. Mi sonido sigue cambiando, y eso es lo que más me emociona.',
     },
     b: {
       label: 'Lado B',
       role: 'Productor',
-      tagline: 'beats oscuros, 808s y sintes de los 80s',
-      bio: 'Produzco para artistas de r&b, trap y pop alternativo. Todos los beats se pueden escuchar aquí. Si te late uno, escríbeme para licencia básica o exclusiva. También hago producción a la medida.',
+      tagline: 'de trap a cumbia: si suena, lo produzco',
+      bio: 'Produzco de todo: trap, rap, R&B, pop, reggaetón, rock, cumbia y electrónica. He trabajado en canciones de Jeune, PandaCano, Kiatra, W.Ortiz, Ander, Beto Reyes y más, y en las Falcon Music Sessions. Escucha mis beats aquí y, si te late uno, escríbeme para cotizar una licencia o una producción a la medida.',
     },
   },
   socials: [
