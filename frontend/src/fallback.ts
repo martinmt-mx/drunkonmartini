@@ -284,12 +284,12 @@ export const fallbackCredits: Credit[] = [
   {
     "id": 2,
     "title": "KIATRA: Falcon Music Sessions #3",
-    "artists": "Falcon Music, Kiatra, Martini",
+    "artists": "Falcon Music, Kiatra & Martini",
     "role": "producción",
     "release_date": "2024-09-03",
-    "artwork_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e022af62aa1974e1e2d1451bbc8",
-    "preview_url": null,
-    "apple_url": null,
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ef/82/a2/ef82a289-74ba-74a9-86c3-5a1c4de3f57e/73360.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e9/25/74/e92574ef-a2f2-518f-0680-419956ba9ee4/mzaf_5447803826735706009.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/kiatra-falcon-music-sessions-3/1765565649?i=1765565652&uo=4",
     "spotify_url": "https://open.spotify.com/track/1W4GmgVyjAuY18MpXJNX0p"
   },
   {

@@ -32,8 +32,7 @@ shared:
     - spotify: 6sDaWOWAvRMhdw3l7FD8dm   # JEUNE: Falcon Music Sessions #2
       apple: 1754427872
     - spotify: 1W4GmgVyjAuY18MpXJNX0p   # KIATRA: Falcon Music Sessions #3
-      artists: Falcon Music, Kiatra, Martini
-      released: 2024-09-03
+      apple: 1765565652
 
     # Jeune
     - spotify: 0bqu72EX1yqhjEMy1UWv0d   # BLACK WIDOW
