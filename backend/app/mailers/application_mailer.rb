@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  # Se manda desde tu Gmail (variable GMAIL_USERNAME en Render).
-  default from: -> { ENV.fetch("GMAIL_USERNAME", "martinimusic.prod@gmail.com") }
+  # Sin dominio propio, Resend sólo permite enviar desde su dirección de pruebas.
+  default from: -> { ENV.fetch("MAIL_FROM", "drunkonmartini <onboarding@resend.dev>") }
   layout "mailer"
 end

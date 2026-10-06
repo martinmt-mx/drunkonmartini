@@ -11,7 +11,7 @@ class MessageMailer < ApplicationMailer
   def new_message(message)
     @message = message
     mail(
-      to: ENV.fetch("CONTACT_EMAIL") { ENV.fetch("GMAIL_USERNAME", "martinimusic.prod@gmail.com") },
+      to: ENV.fetch("CONTACT_EMAIL", "martinimusic.prod@gmail.com"),
       reply_to: message.email,
       subject: "[drunkonmartini] #{SUBJECTS.fetch(message.kind, 'Mensaje')} de #{message.name}"
     )
