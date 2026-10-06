@@ -5,6 +5,9 @@ export type Track = {
   title: string
   duration: string
   audio_url: string | null
+  preview_url: string | null
+  apple_url: string | null
+  spotify_url: string | null
   bpm: number | null
   root_note: number | null
 }
@@ -14,11 +17,28 @@ export type Release = {
   title: string
   kind: 'album' | 'ep' | 'single'
   year: number
-  era: string
-  description: string
-  cover_from: string
-  cover_to: string
+  release_date: string | null
+  era: string | null
+  description: string | null
+  cover_from: string | null
+  cover_to: string | null
+  artwork_url: string | null
+  apple_url: string | null
+  spotify_url: string | null
   tracks: Track[]
+}
+
+/** Canción de otro artista donde participé en la producción. */
+export type Credit = {
+  id: number
+  title: string
+  artists: string | null
+  role: string
+  release_date: string | null
+  artwork_url: string | null
+  preview_url: string | null
+  apple_url: string | null
+  spotify_url: string | null
 }
 
 export type Beat = {
@@ -42,6 +62,8 @@ export type Playable = {
   subtitle: string
   side: Side
   audioUrl: string | null
+  /** true cuando audioUrl es un preview de 30 s de Apple Music. */
+  isPreview?: boolean
   bpm: number
   rootNote: number
 }

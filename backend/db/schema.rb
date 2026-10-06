@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_05_184024) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_06_020055) do
   create_table "beats", force: :cascade do |t|
     t.string "title"
     t.integer "bpm"
@@ -24,6 +24,23 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_05_184024) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "credits", force: :cascade do |t|
+    t.string "title"
+    t.string "artists"
+    t.string "role"
+    t.date "release_date"
+    t.string "artwork_url"
+    t.string "preview_url"
+    t.string "apple_url"
+    t.string "spotify_url"
+    t.bigint "apple_track_id"
+    t.string "spotify_track_id"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spotify_track_id"], name: "index_credits_on_spotify_track_id", unique: true
   end
 
   create_table "messages", force: :cascade do |t|
@@ -46,6 +63,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_05_184024) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "apple_collection_id"
+    t.date "release_date"
+    t.string "artwork_url"
+    t.string "apple_url"
+    t.string "spotify_url"
+    t.index ["apple_collection_id"], name: "index_releases_on_apple_collection_id", unique: true
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -58,6 +81,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_05_184024) do
     t.integer "root_note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "apple_track_id"
+    t.string "preview_url"
+    t.string "apple_url"
+    t.string "spotify_url"
+    t.index ["apple_track_id"], name: "index_tracks_on_apple_track_id", unique: true
     t.index ["release_id"], name: "index_tracks_on_release_id"
   end
 

@@ -2,26 +2,29 @@ import { useState } from 'react'
 import { profile } from '../profile'
 import type { Release, Track } from '../types'
 import { usePlayer } from '../player/PlayerContext'
+import { Cover, StreamLinks } from './Cover'
 import { Win } from './Win'
 
 const KIND_LABEL = { album: 'Álbum', ep: 'EP', single: 'Single' } as const
 
 export function ArtistSide({ releases }: { releases: Release[] }) {
-  const [openId, setOpenId] = useState<number | null>(releases[0]?.id ?? null)
+  const [openId, setOpenId] = useState<number | null>(null)
   const open = releases.find((r) => r.id === openId) ?? releases[0]
-  const eras = [...new Set(releases.map((r) => r.era))]
+  const eras = [...new Set(releases.map((r) => r.era).filter((e): e is string => !!e))]
 
   return (
     <div className="side-grid">
       <Win title="leeme.txt" className="span-2">
         <p className="bio">{profile.sides.a.bio}</p>
-        <ol className="eras">
-          {eras.map((era, i) => (
-            <li key={era} className={i === eras.length - 1 ? 'current' : ''}>
-              <span className="pixel">{era}</span>
-            </li>
-          ))}
-        </ol>
+        {eras.length > 0 && (
+          <ol className="eras">
+            {eras.map((era, i) => (
+              <li key={era} className={i === eras.length - 1 ? 'current' : ''}>
+                <span className="pixel">{era}</span>
+              </li>
+            ))}
+          </ol>
+        )}
       </Win>
 
       <Win title={`discografia/ (${releases.length})`} className="span-2">
@@ -32,7 +35,7 @@ export function ArtistSide({ releases }: { releases: Release[] }) {
                 className={`release ${open?.id === r.id ? 'on' : ''}`}
                 onClick={() => setOpenId(r.id)}
               >
-                <Cover release={r} />
+                <Cover title={r.title} artworkUrl={r.artwork_url} from={r.cover_from} to={r.cover_to} />
                 <span className="release-title">{r.title}</span>
                 <span className="release-meta dim">{KIND_LABEL[r.kind]} · {r.year}</span>
               </button>
@@ -42,12 +45,13 @@ export function ArtistSide({ releases }: { releases: Release[] }) {
       </Win>
 
       {open && (
-        <Win title={`${open.title}.m3u`} className="span-2" aside={<span className="dim">{open.era}</span>}>
+        <Win title={`${open.title}.m3u`} className="span-2" aside={<span className="dim">{KIND_LABEL[open.kind]} · {open.year}</span>}>
           <div className="tracklist-head">
-            <Cover release={open} big />
+            <Cover title={open.title} artworkUrl={open.artwork_url} from={open.cover_from} to={open.cover_to} big />
             <div>
               <h3 className="serif">{open.title}</h3>
-              <p className="dim">{open.description}</p>
+              {open.description && <p className="dim">{open.description}</p>}
+              <StreamLinks spotify={open.spotify_url} apple={open.apple_url} />
             </div>
           </div>
           <ol className="tracklist">
@@ -55,6 +59,9 @@ export function ArtistSide({ releases }: { releases: Release[] }) {
               <TrackRow key={t.id} track={t} index={i} release={open} />
             ))}
           </ol>
+          {open.tracks.some((t) => !t.audio_url && t.preview_url) && (
+            <p className="note dim">previews de 30 s · completas en Spotify o Apple Music</p>
+          )}
         </Win>
       )}
     </div>
@@ -74,7 +81,8 @@ function TrackRow({ track, index, release }: { track: Track; index: number; rele
           title: track.title,
           subtitle: release.title,
           side: 'a',
-          audioUrl: track.audio_url,
+          audioUrl: track.audio_url ?? track.preview_url,
+          isPreview: !track.audio_url && !!track.preview_url,
           bpm: track.bpm ?? 90,
           rootNote: track.root_note ?? 57,
         })
@@ -86,18 +94,7 @@ function TrackRow({ track, index, release }: { track: Track; index: number; rele
         <span className="row-title">{track.title}</span>
         <span className="row-meta dim">{track.duration}</span>
       </button>
+      <StreamLinks spotify={track.spotify_url} apple={track.apple_url} />
     </li>
-  )
-}
-
-function Cover({ release, big = false }: { release: Release; big?: boolean }) {
-  return (
-    <span
-      className={`cover ${big ? 'big' : ''}`}
-      style={{ background: `radial-gradient(circle at 30% 25%, ${release.cover_from}, ${release.cover_to} 70%)` }}
-      aria-hidden
-    >
-      <span className="cover-mark pixel">{release.title === '???' ? '?' : release.title[0]}</span>
-    </span>
   )
 }

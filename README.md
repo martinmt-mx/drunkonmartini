@@ -21,7 +21,7 @@ frontend/  React 19 + TypeScript + Vite
 
 ```bash
 # terminal 1
-cd backend && bin/rails db:prepare && bin/rails s -p 3000
+cd backend && bin/rails db:prepare && bin/rails music:sync && bin/rails s -p 3000
 
 # terminal 2
 cd frontend && npm install && npm run dev
@@ -35,8 +35,17 @@ Si Rails no está corriendo, el frontend usa `src/fallback.ts` y en la barra apa
 | Qué | Archivo |
 |---|---|
 | Bio, redes, correo | `frontend/src/profile.ts` |
-| Canciones, releases y beats | `backend/db/seeds.rb` → `bin/rails db:seed` |
+| Tus lanzamientos (Lado A) y créditos de producción (Lado B) | `backend/config/streaming.yml` → `bin/rails music:sync` |
+| Beats | `backend/db/seeds.rb` → `bin/rails db:seed` |
 | Colores de cada lado / nueva era | `frontend/src/styles.css` (`--accent`) |
+
+## Música real
+
+`bin/rails music:sync` descarga desde la iTunes Search API de Apple (pública, sin llaves) los lanzamientos
+del artista, sus portadas y previews de 30 s, y los créditos de producción listados en `config/streaming.yml`.
+Los previews se reproducen en el reproductor propio del sitio (Apple los sirve con CORS abierto, así que pasan
+por el visualizador), y cada canción enlaza a Spotify y Apple Music para escucharla completa. Correrlo dos
+veces no duplica nada: los registros se buscan por sus ids de Apple y Spotify.
 
 ## Audio
 
@@ -48,4 +57,5 @@ se reproduce el archivo real.
 
 - `GET  /api/releases`: releases con sus tracks
 - `GET  /api/beats`: beats disponibles
+- `GET  /api/credits`: canciones de otros artistas donde participé en la producción
 - `POST /api/messages`: `{ message: { name, email, body, kind } }`, kind ∈ booking · beat · colab · guestbook

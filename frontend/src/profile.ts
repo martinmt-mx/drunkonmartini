@@ -20,7 +20,8 @@ export const profile = {
   },
   socials: [
     { label: 'Instagram', href: 'https://instagram.com/drunkonmartini' },
-    { label: 'Spotify', href: '#' },
+    { label: 'Spotify', href: 'https://open.spotify.com/artist/5bOjTZCohwu1EQ7BHcq2sK' },
+    { label: 'Apple Music', href: 'https://music.apple.com/mx/artist/martini/1756805973' },
     { label: 'YouTube', href: '#' },
     { label: 'SoundCloud', href: '#' },
     { label: 'BeatStars', href: '#' },

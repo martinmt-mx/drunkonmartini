@@ -1,12 +1,17 @@
 import { useMemo, useState } from 'react'
 import { profile } from '../profile'
-import type { Beat } from '../types'
+import type { Beat, Credit } from '../types'
 import { usePlayer } from '../player/PlayerContext'
+import { Cover, StreamLinks } from './Cover'
 import { Win } from './Win'
 
 type Sort = 'nuevo' | 'bpm-asc' | 'bpm-desc'
 
-export function ProducerSide({ beats, onLicense }: { beats: Beat[]; onLicense: (beat: Beat) => void }) {
+export function ProducerSide({ beats, credits, onLicense }: {
+  beats: Beat[]
+  credits: Credit[]
+  onLicense: (beat: Beat) => void
+}) {
   const [query, setQuery] = useState('')
   const [mood, setMood] = useState<string | null>(null)
   const [sort, setSort] = useState<Sort>('nuevo')
@@ -30,6 +35,14 @@ export function ProducerSide({ beats, onLicense }: { beats: Beat[]; onLicense: (
       <Win title="leeme.txt" className="span-2">
         <p className="bio">{profile.sides.b.bio}</p>
       </Win>
+
+      {credits.length > 0 && (
+        <Win title={`creditos_de_produccion/ (${credits.length})`} className="span-2">
+          <ul className="credits">
+            {credits.map((c) => <CreditCard key={c.id} credit={c} />)}
+          </ul>
+        </Win>
+      )}
 
       <Win title={`C:\\beats\\  —  ${visible.length} de ${beats.length}`} className="span-2">
         <div className="filters">
@@ -72,6 +85,45 @@ export function ProducerSide({ beats, onLicense }: { beats: Beat[]; onLicense: (
         </div>
       </Win>
     </div>
+  )
+}
+
+function CreditCard({ credit }: { credit: Credit }) {
+  const { current, playing, play, toggle } = usePlayer()
+  const key = `c${credit.id}`
+  const isCurrent = current?.key === key
+
+  const onPlay = () =>
+    isCurrent
+      ? toggle()
+      : play({
+          key,
+          title: credit.title,
+          subtitle: credit.artists ?? credit.role,
+          side: 'b',
+          audioUrl: credit.preview_url,
+          isPreview: true,
+          bpm: 90,
+          rootNote: 57,
+        })
+
+  return (
+    <li className={`credit ${isCurrent ? 'playing' : ''}`}>
+      <Cover title={credit.title} artworkUrl={credit.artwork_url} />
+      <div className="credit-info">
+        <span className="credit-title">{credit.title}</span>
+        <span className="dim">{credit.artists}</span>
+        <span className="pixel accent">
+          {credit.role}{credit.release_date && ` · ${credit.release_date.slice(0, 4)}`}
+        </span>
+        <StreamLinks spotify={credit.spotify_url} apple={credit.apple_url} />
+      </div>
+      {credit.preview_url && (
+        <button className="play" onClick={onPlay} aria-label={`${isCurrent && playing ? 'Pausar' : 'Reproducir'} ${credit.title}`}>
+          {isCurrent && playing ? '❚❚' : '▶'}
+        </button>
+      )}
+    </li>
   )
 }
 
