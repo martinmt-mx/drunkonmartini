@@ -1,5 +1,5 @@
-import type { Beat, MessageKind, Release } from './types'
-import { fallbackBeats, fallbackReleases } from './fallback'
+import type { Beat, Credit, MessageKind, Release } from './types'
+import { fallbackBeats, fallbackCredits, fallbackReleases } from './fallback'
 
 // Si Rails no está corriendo, se usan los datos locales para que la página
 // nunca se quede vacía mientras diseñas.
@@ -15,6 +15,7 @@ async function getJson<T>(path: string, fallback: T): Promise<{ data: T; live: b
 
 export const fetchReleases = () => getJson<Release[]>('/api/releases', fallbackReleases)
 export const fetchBeats = () => getJson<Beat[]>('/api/beats', fallbackBeats)
+export const fetchCredits = () => getJson<Credit[]>('/api/credits', fallbackCredits)
 
 export async function sendMessage(message: {
   name: string

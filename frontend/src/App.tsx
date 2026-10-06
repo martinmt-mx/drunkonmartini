@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { fetchBeats, fetchReleases } from './api'
+import { fetchBeats, fetchCredits, fetchReleases } from './api'
 import { ArtistSide } from './components/ArtistSide'
 import { Contact, type ContactPrefill } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -8,7 +8,7 @@ import { MenuBar } from './components/MenuBar'
 import { Player } from './components/Player'
 import { ProducerSide } from './components/ProducerSide'
 import { PlayerProvider } from './player/PlayerContext'
-import type { Beat, Release, Side } from './types'
+import type { Beat, Credit, Release, Side } from './types'
 
 const sideFromHash = (): Side => (location.hash === '#productor' ? 'b' : 'a')
 
@@ -16,14 +16,16 @@ export function App() {
   const [side, setSideState] = useState<Side>(sideFromHash)
   const [releases, setReleases] = useState<Release[]>([])
   const [beats, setBeats] = useState<Beat[]>([])
+  const [credits, setCredits] = useState<Credit[]>([])
   const [live, setLive] = useState<boolean | null>(null)
   const [prefill, setPrefill] = useState<ContactPrefill | null>(null)
 
   useEffect(() => {
-    Promise.all([fetchReleases(), fetchBeats()]).then(([r, b]) => {
+    Promise.all([fetchReleases(), fetchBeats(), fetchCredits()]).then(([r, b, c]) => {
       setReleases(r.data)
       setBeats(b.data)
-      setLive(r.live && b.live)
+      setCredits(c.data)
+      setLive(r.live && b.live && c.live)
     })
   }, [])
 
@@ -59,7 +61,7 @@ export function App() {
       <main className="page">
         <Hero side={side} onSide={setSide} />
         <div id="lado" className="side-content" key={side}>
-          {side === 'a' ? <ArtistSide releases={releases} /> : <ProducerSide beats={beats} onLicense={onLicense} />}
+          {side === 'a' ? <ArtistSide releases={releases} /> : <ProducerSide beats={beats} credits={credits} onLicense={onLicense} />}
         </div>
         <Contact prefill={prefill} />
         <Footer />

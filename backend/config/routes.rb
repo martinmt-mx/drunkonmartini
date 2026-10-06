@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :releases, only: :index
     resources :beats, only: :index
+    resources :credits, only: :index
     resources :messages, only: :create
   end
 end

@@ -155,6 +155,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   content: ''; position: absolute; inset: 0;
   background: repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.18) 0 1px, transparent 1px 3px);
 }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .cover-mark { font-size: 64px; color: rgb(255 255 255 / 0.85); mix-blend-mode: overlay; }
 .cover.big { width: 120px; flex: none; }
 .cover.big .cover-mark { font-size: 48px; }
@@ -170,6 +171,26 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .row-idx { width: 2ch; color: var(--dim); }
 .row-title { flex: 1; }
 .tracklist li.playing .row-title, .tracklist li.playing .row-idx { color: var(--accent); }
+.tracklist li { display: flex; align-items: center; gap: 12px; }
+.tracklist .row { flex: 1; min-width: 0; }
+.tracklist .stream-links { font-size: 11px; opacity: 0.55; transition: opacity 0.2s; }
+.tracklist li:hover .stream-links, .tracklist li.playing .stream-links { opacity: 1; }
+.tracklist-head .stream-links { margin-top: 12px; }
+
+.stream-links { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; white-space: nowrap; font-size: 12px; }
+.stream-links a { color: var(--dim); text-decoration: none; }
+.stream-links a:hover { color: var(--accent); }
+.note { margin: 14px 0 0; font-size: 12px; }
+
+/* ── Créditos de producción ────────────────────── */
+.credits { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; }
+.credit { display: flex; align-items: center; gap: 14px; padding: 10px; border: 1px solid var(--line); }
+.credit:hover, .credit.playing { border-color: var(--accent); }
+.credit .cover { width: 72px; flex: none; }
+.credit .cover-mark { font-size: 32px; }
+.credit-info { display: grid; gap: 2px; flex: 1; min-width: 0; font-size: 12px; }
+.credit-title { font: italic 18px/1.15 var(--serif); }
+.credit .play { flex: none; }
 
 /* ── Beats ─────────────────────────────────────── */
 .filters { display: flex; gap: 8px; margin-bottom: 12px; }
@@ -290,6 +311,8 @@ textarea.input { resize: vertical; }
   .beat-moods { grid-column: 2; grid-row: 2; }
   .license { grid-row: span 2; }
   .tracklist-head { flex-direction: column; align-items: flex-start; }
+  .tracklist li { flex-wrap: wrap; gap: 0 12px; }
+  .tracklist li > .stream-links { padding: 0 4px 10px calc(2ch + 20px); opacity: 1; }
   .viz, .player-time { display: none; }
 }
 @media (max-width: 420px) {
