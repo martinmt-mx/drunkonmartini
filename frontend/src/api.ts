@@ -22,6 +22,8 @@ export async function sendMessage(message: {
   email: string
   body: string
   kind: MessageKind
+  /** Campo trampa: vacío para personas, los bots lo llenan. */
+  website: string
 }): Promise<{ ok: boolean; errors?: string[] }> {
   try {
     const res = await fetch('/api/messages', {

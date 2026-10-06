@@ -1,0 +1,12 @@
+# Lo que NO se manda a Render al construir la imagen.
+.git
+**/node_modules
+frontend/dist
+backend/log/*
+backend/tmp/*
+backend/storage/*
+!backend/log/.keep
+!backend/tmp/.keep
+!backend/storage/.keep
+backend/config/master.key
+**/.env*

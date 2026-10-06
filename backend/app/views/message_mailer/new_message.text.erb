@@ -1,0 +1,10 @@
+Nuevo mensaje desde drunkonmartini
+
+Asunto:  <%= MessageMailer::SUBJECTS.fetch(@message.kind, @message.kind) %>
+Nombre:  <%= @message.name %>
+Correo:  <%= @message.email %>
+
+<%= @message.body %>
+
+--
+Responde a este correo para contestarle directo a <%= @message.name %>.

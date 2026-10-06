@@ -20,6 +20,7 @@ export function Contact({ prefill }: { prefill: ContactPrefill | null }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [body, setBody] = useState('')
+  const [website, setWebsite] = useState('') // trampa para bots: una persona nunca lo ve
   const [status, setStatus] = useState<Status>({ state: 'idle' })
 
   useEffect(() => {
@@ -32,7 +33,7 @@ export function Contact({ prefill }: { prefill: ContactPrefill | null }) {
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setStatus({ state: 'sending' })
-    const res = await sendMessage({ name, email, body, kind })
+    const res = await sendMessage({ name, email, body, kind, website })
     if (res.ok) {
       setStatus({ state: 'sent' })
       setBody('')
@@ -71,6 +72,10 @@ export function Contact({ prefill }: { prefill: ContactPrefill | null }) {
             <label>
               <span className="pixel dim">mensaje</span>
               <textarea className="input" required rows={5} maxLength={2000} value={body} onChange={(e) => setBody(e.target.value)} />
+            </label>
+            <label className="honeypot" aria-hidden="true">
+              no llenes este campo
+              <input tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
             </label>
             {status.state === 'error' && (
               <ul className="errors">{status.errors.map((er) => <li key={er}>{er}</li>)}</ul>

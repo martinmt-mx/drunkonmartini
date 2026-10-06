@@ -251,6 +251,8 @@ textarea.input { resize: vertical; }
 .btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 700; }
 .btn.primary:hover { filter: brightness(1.15); }
 .btn:disabled { opacity: 0.6; cursor: wait; }
+/* Campo trampa: fuera de pantalla (no display:none, que algunos bots detectan) */
+.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .errors { margin: 0; padding-left: 18px; color: var(--accent); font-size: 12px; }
 .sent p { margin: 0 0 8px; }
 .sent .btn { margin-top: 8px; }
