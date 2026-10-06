@@ -21,7 +21,7 @@ export function Player() {
           <span className="marquee">{current.title}</span>
           <span className="dim"> — {current.subtitle}</span>
           {isDemo && <span className="tag pixel" title="Sin archivo de audio todavía: sintetizado en el navegador">demo synth</span>}
-          {current.isPreview && <span className="tag pixel" title="Preview de Apple Music; la canción completa está en Spotify y Apple Music">preview 30s</span>}
+          {current.isPreview && <span className="tag pixel" title="Fragmento de la canción, no la versión completa">preview</span>}
         </div>
         <div className="progress" aria-hidden>
           <i style={{ width: `${pct}%` }} />

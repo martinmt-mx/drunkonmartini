@@ -141,6 +141,7 @@ function BeatRow({ beat, onLicense }: { beat: Beat; onLicense: () => void }) {
           subtitle: `${beat.bpm} bpm · ${beat.musical_key}`,
           side: 'b',
           audioUrl: beat.audio_url,
+          isPreview: !!beat.audio_url,
           bpm: beat.bpm,
           rootNote: beat.root_note ?? 57,
         })
@@ -155,7 +156,7 @@ function BeatRow({ beat, onLicense }: { beat: Beat; onLicense: () => void }) {
       <span className="pixel">{beat.musical_key}</span>
       <span className="beat-moods dim">{beat.moods.map((m) => `#${m}`).join(' ')}</span>
       <button className="license" onClick={onLicense}>
-        desde ${beat.price_lease}
+        {beat.price_lease ? `desde $${beat.price_lease}` : 'cotizar'}
       </button>
     </div>
   )

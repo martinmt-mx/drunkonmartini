@@ -305,17 +305,176 @@ export const fallbackCredits: Credit[] = [
   }
 ]
 
-const b = (id: number, title: string, bpm: number, musical_key: string, moods: string[], root_note: number): Beat => ({
-  id, title, bpm, musical_key, moods, root_note, audio_url: null, price_lease: 30, price_exclusive: 300,
-})
-
 export const fallbackBeats: Beat[] = [
-  b(1, 'Siempre de noche', 92, 'A min', ['dark', 'rnb', 'slow'], 57),
-  b(2, 'Cristal', 140, 'F# min', ['trap', 'dark'], 54),
-  b(3, 'Velvet 3AM', 84, 'D min', ['rnb', 'smooth'], 50),
-  b(4, 'Autopista', 118, 'C min', ['synthwave', '80s'], 48),
-  b(5, 'Mensajes en visto', 75, 'E min', ['rnb', 'sad', 'slow'], 52),
-  b(6, 'Club cerrado', 128, 'G min', ['dance', '80s'], 55),
-  b(7, 'Humo', 145, 'B min', ['trap', 'sad'], 59),
-  b(8, 'Seda', 90, 'Bb min', ['rnb', 'smooth'], 58),
+  {
+    "id": 17,
+    "title": "Luces de la Ciudad - BB028",
+    "bpm": 89,
+    "musical_key": "F# min",
+    "audio_url": "/audio/beats/bb028.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "pop"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Asfalto - BB005",
+    "bpm": 85,
+    "musical_key": "F# min",
+    "audio_url": "/audio/beats/bb005.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "rap"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Sin Señal - AA031",
+    "bpm": 137,
+    "musical_key": "C# min",
+    "audio_url": "/audio/beats/aa031.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "trap"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Dos Caras - AA019",
+    "bpm": 157,
+    "musical_key": "G min",
+    "audio_url": "/audio/beats/aa019.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "rap",
+      "trap"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Neón - AA012",
+    "bpm": 98,
+    "musical_key": "D min",
+    "audio_url": "/audio/beats/aa012.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "trap"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Cristal Roto - AA004",
+    "bpm": 131,
+    "musical_key": "G min",
+    "audio_url": "/audio/beats/aa004.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "trap"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Oro - PRY79",
+    "bpm": 150,
+    "musical_key": "E maj",
+    "audio_url": "/audio/beats/pry79.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "trap"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Después de las 3",
+    "bpm": 145,
+    "musical_key": "Eb min",
+    "audio_url": "/audio/beats/rnb73.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "trap"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Última Ronda",
+    "bpm": 128,
+    "musical_key": "G min",
+    "audio_url": "/audio/beats/rnb85.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "trap"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Peor que Ayer",
+    "bpm": 79,
+    "musical_key": "F min",
+    "audio_url": "/audio/beats/rnb21-2.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "trap",
+      "tipo bad bunny"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Humo Blanco",
+    "bpm": 130,
+    "musical_key": "B min",
+    "audio_url": "/audio/beats/rnb13.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "trap"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Calle 52",
+    "bpm": 90,
+    "musical_key": "A min",
+    "audio_url": "/audio/beats/rnb52.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "rap"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Vaso Medio Lleno",
+    "bpm": 65,
+    "musical_key": "Ab maj",
+    "audio_url": "/audio/beats/rnb9-2.mp3",
+    "price_lease": null,
+    "price_exclusive": null,
+    "root_note": null,
+    "moods": [
+      "rap"
+    ]
+  }
 ]
