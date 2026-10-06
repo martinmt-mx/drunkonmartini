@@ -5,7 +5,7 @@ const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).p
 
 // Barra fija tipo Winamp, en versión minimal.
 export function Player() {
-  const { current, playing, isDemo, time, duration, analyser, toggle, stop } = usePlayer()
+  const { current, playing, isDemo, time, duration, analyser, toggle, close } = usePlayer()
   if (!current) return null
 
   const pct = duration ? (time / duration) * 100 : 0
@@ -28,7 +28,7 @@ export function Player() {
         </div>
       </div>
       <span className="pixel player-time">{fmt(time)} / {fmt(duration)}</span>
-      <button className="player-close" onClick={stop} aria-label="Detener">×</button>
+      <button className="player-close" onClick={close} aria-label="Cerrar reproductor">×</button>
     </div>
   )
 }
