@@ -25,7 +25,7 @@ function chain(ctx: AudioContext) {
   master.gain.value = 0.8
   const comp = ctx.createDynamicsCompressor()
   const analyser = ctx.createAnalyser()
-  analyser.fftSize = 256
+  analyser.fftSize = 512 // 256 bandas de frecuencia: suficientes para el círculo de fondo
   analyser.smoothingTimeConstant = 0.8
   master.connect(comp).connect(analyser).connect(ctx.destination)
   return { master, analyser }

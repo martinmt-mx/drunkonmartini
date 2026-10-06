@@ -21,7 +21,7 @@ beats = [
   [ "Oro - PRY79",                "PRY79",  150, "E maj",  "trap" ],
   [ "Después de las 3",           "RnB73",  145, "Eb min", "trap" ],
   [ "Última Ronda",               "RnB85",  128, "G min",  "trap" ],
-  [ "Peor que Ayer",              "RnB21_2", 79, "F min",  "trap,tipo bad bunny" ],
+  [ "Peor que Ayer",              "RnB21_2", 79, "F min",  "trap" ],
   [ "Humo Blanco",                "RnB13",  130, "B min",  "trap" ],
   [ "Calle 52",                   "RnB52",   90, "A min",  "rap" ],
   [ "Vaso Medio Lleno",           "RnB9-2",  65, "Ab maj", "rap" ]

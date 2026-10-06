@@ -15,7 +15,7 @@ export const profile = {
       label: 'Lado B',
       role: 'Productor',
       tagline: 'de trap a cumbia: si suena, lo produzco',
-      bio: 'Produzco de todo: trap, rap, R&B, pop, reggaetón, rock, cumbia y electrónica. He trabajado en canciones de Jeune, PandaCano, Kiatra, W.Ortiz, Ander, Beto Reyes y más, y en las Falcon Music Sessions. Escucha mis beats aquí y, si te late uno, escríbeme para cotizar una licencia o una producción a la medida.',
+      bio: 'Produzco de todo: trap, rap, R&B, pop, reggaetón, rock, cumbia y electrónica. Aquí puedes escuchar canciones en las que he trabajado y mis beats a la venta. Si te late uno, escríbeme para cotizar una licencia o una producción a la medida.',
     },
   },
   socials: [

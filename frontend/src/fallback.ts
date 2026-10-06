@@ -307,7 +307,7 @@ export const fallbackCredits: Credit[] = [
 
 export const fallbackBeats: Beat[] = [
   {
-    "id": 17,
+    "id": 30,
     "title": "Luces de la Ciudad - BB028",
     "bpm": 89,
     "musical_key": "F# min",
@@ -320,7 +320,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 18,
+    "id": 31,
     "title": "Asfalto - BB005",
     "bpm": 85,
     "musical_key": "F# min",
@@ -333,7 +333,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 19,
+    "id": 32,
     "title": "Sin Señal - AA031",
     "bpm": 137,
     "musical_key": "C# min",
@@ -346,7 +346,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 20,
+    "id": 33,
     "title": "Dos Caras - AA019",
     "bpm": 157,
     "musical_key": "G min",
@@ -360,7 +360,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 21,
+    "id": 34,
     "title": "Neón - AA012",
     "bpm": 98,
     "musical_key": "D min",
@@ -373,7 +373,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 22,
+    "id": 35,
     "title": "Cristal Roto - AA004",
     "bpm": 131,
     "musical_key": "G min",
@@ -386,7 +386,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 23,
+    "id": 36,
     "title": "Oro - PRY79",
     "bpm": 150,
     "musical_key": "E maj",
@@ -399,7 +399,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 24,
+    "id": 37,
     "title": "Después de las 3",
     "bpm": 145,
     "musical_key": "Eb min",
@@ -412,7 +412,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 25,
+    "id": 38,
     "title": "Última Ronda",
     "bpm": 128,
     "musical_key": "G min",
@@ -425,7 +425,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 26,
+    "id": 39,
     "title": "Peor que Ayer",
     "bpm": 79,
     "musical_key": "F min",
@@ -434,12 +434,11 @@ export const fallbackBeats: Beat[] = [
     "price_exclusive": null,
     "root_note": null,
     "moods": [
-      "trap",
-      "tipo bad bunny"
+      "trap"
     ]
   },
   {
-    "id": 27,
+    "id": 40,
     "title": "Humo Blanco",
     "bpm": 130,
     "musical_key": "B min",
@@ -452,7 +451,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 28,
+    "id": 41,
     "title": "Calle 52",
     "bpm": 90,
     "musical_key": "A min",
@@ -465,7 +464,7 @@ export const fallbackBeats: Beat[] = [
     ]
   },
   {
-    "id": 29,
+    "id": 42,
     "title": "Vaso Medio Lleno",
     "bpm": 65,
     "musical_key": "Ab maj",
