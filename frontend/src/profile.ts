@@ -3,7 +3,7 @@
 export const profile = {
   name: 'drunkonmartini',
   handle: '@drunkonmartini',
-  email: 'booking@drunkonmartini.com',
+  email: 'martinimusic.prod@gmail.com',
   sides: {
     a: {
       label: 'Lado A',
@@ -22,8 +22,7 @@ export const profile = {
     { label: 'Instagram', href: 'https://instagram.com/drunkonmartini' },
     { label: 'Spotify', href: 'https://open.spotify.com/artist/5bOjTZCohwu1EQ7BHcq2sK' },
     { label: 'Apple Music', href: 'https://music.apple.com/mx/artist/martini/1756805973' },
-    { label: 'YouTube', href: '#' },
-    { label: 'SoundCloud', href: '#' },
-    { label: 'BeatStars', href: '#' },
+    { label: 'YouTube', href: 'https://www.youtube.com/@drunkonmartini' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@drunkonmartini' },
   ],
 } as const
