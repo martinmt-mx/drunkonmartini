@@ -48,8 +48,9 @@ export type Beat = {
   musical_key: string
   moods: string[]
   audio_url: string | null
-  price_lease: number
-  price_exclusive: number
+  /** null = sin precio publicado; el sitio muestra "cotizar". */
+  price_lease: number | null
+  price_exclusive: number | null
   root_note: number | null
 }
 
@@ -62,7 +63,7 @@ export type Playable = {
   subtitle: string
   side: Side
   audioUrl: string | null
-  /** true cuando audioUrl es un preview de 30 s de Apple Music. */
+  /** true cuando audioUrl es un fragmento (Apple Music o preview de beat), no la canción completa. */
   isPreview?: boolean
   bpm: number
   rootNote: number

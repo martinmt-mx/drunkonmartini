@@ -36,7 +36,8 @@ Si Rails no está corriendo, el frontend usa `src/fallback.ts` y en la barra apa
 |---|---|
 | Bio, redes, correo | `frontend/src/profile.ts` |
 | Tus lanzamientos (Lado A) y créditos de producción (Lado B) | `backend/config/streaming.yml` → `bin/rails music:sync` |
-| Beats | `backend/db/seeds.rb` → `bin/rails db:seed` |
+| Beats (nombre, BPM, tonalidad, precio) | `backend/db/seeds.rb` → `bin/rails db:seed` |
+| Audio de los beats | `frontend/public/audio/beats/*.mp3`: previews de 60 s; los WAV originales no se suben |
 | Colores de cada lado / nueva era | `frontend/src/styles.css` (`--accent`) |
 
 ## Música real
