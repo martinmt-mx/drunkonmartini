@@ -11,9 +11,7 @@ services:
     envVars:
       - key: SECRET_KEY_BASE
         generateValue: true # Render inventa una clave secreta segura
-      - key: GMAIL_USERNAME
-        value: martinimusic.prod@gmail.com
       - key: CONTACT_EMAIL
-        value: martinimusic.prod@gmail.com
-      - key: GMAIL_APP_PASSWORD
-        sync: false # Render la pide al crear el servicio; nunca va en el repo
+        value: martinimusic.prod@gmail.com # adonde llegan los mensajes del formulario
+      - key: RESEND_API_KEY
+        sync: false # llave de resend.com; se pega en Render, nunca va en el repo

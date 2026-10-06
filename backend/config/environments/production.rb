@@ -57,21 +57,14 @@ Rails.application.configure do
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: ENV.fetch("RENDER_EXTERNAL_HOSTNAME", "drunkonmartini.onrender.com") }
 
-  # Correos del formulario de contacto vía Gmail. La contraseña es una "contraseña de
-  # aplicación" de Google que vive sólo en las variables de entorno de Render.
-  if ENV["GMAIL_APP_PASSWORD"].present?
-    config.action_mailer.delivery_method = :smtp
+  # Correos del formulario de contacto vía la API HTTP de Resend (lib/resend_delivery.rb).
+  # No usamos SMTP: el plan gratis de Render bloquea los puertos 25, 465 y 587.
+  # La llave vive sólo en las variables de entorno de Render.
+  if ENV["RESEND_API_KEY"].present?
+    config.action_mailer.delivery_method = :resend
     config.action_mailer.raise_delivery_errors = true
-    config.action_mailer.smtp_settings = {
-      address: "smtp.gmail.com",
-      port: 587,
-      user_name: ENV.fetch("GMAIL_USERNAME"),
-      password: ENV.fetch("GMAIL_APP_PASSWORD"),
-      authentication: :plain,
-      enable_starttls_auto: true
-    }
   else
-    # Sin contraseña configurada los mensajes se guardan pero no se mandan.
+    # Sin llave configurada los mensajes se guardan pero no se mandan.
     config.action_mailer.perform_deliveries = false
   end
 

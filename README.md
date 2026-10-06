@@ -74,5 +74,10 @@ pierde nada importante: la música y los beats vuelven a cargarse, y los mensaje
 por correo.
 
 Para publicar: Render → **New → Blueprint** → elegir este repo. `render.yaml` crea el servicio y pide
-`GMAIL_APP_PASSWORD`, una [contraseña de aplicación de Google](https://myaccount.google.com/apppasswords)
-(requiere la verificación en 2 pasos). Sin ella, el sitio funciona pero los mensajes no se envían.
+`RESEND_API_KEY`, una llave de [Resend](https://resend.com) creada con la cuenta del correo que recibe
+los mensajes. Sin ella, el sitio funciona pero los mensajes no se envían.
+
+**Por qué Resend y no Gmail:** el plan gratis de Render bloquea los puertos de SMTP (25, 465, 587), así
+que el correo se manda por la API HTTPS de Resend (`lib/resend_delivery.rb`, registrada como forma de
+envío de Action Mailer). Sin dominio propio, Resend envía desde `onboarding@resend.dev` sólo hacia el
+correo de la cuenta, que es justo lo que necesita el formulario.
