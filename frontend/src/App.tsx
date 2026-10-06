@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { fetchBeats, fetchCredits, fetchReleases } from './api'
 import { ArtistSide } from './components/ArtistSide'
+import { AudioRing } from './components/AudioRing'
 import { Contact, type ContactPrefill } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
@@ -56,6 +57,7 @@ export function App() {
 
   return (
     <PlayerProvider>
+      <AudioRing />
       <div className="crt" aria-hidden />
       <MenuBar side={side} onSide={setSide} live={live} />
       <main className="page">
