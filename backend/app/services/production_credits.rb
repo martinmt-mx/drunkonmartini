@@ -39,6 +39,7 @@ class ProductionCredits
     credit.update!(
       **attrs,
       artists: entry[:artists].presence || attrs[:artists],
+      release_date: entry[:released] || attrs[:release_date],
       role: entry[:role].presence || "producción",
       apple_track_id: entry[:apple],
       spotify_url: "https://open.spotify.com/track/#{entry[:spotify]}"
@@ -79,7 +80,7 @@ class ProductionCredits
     JSON.parse(response.body)
   end
 
-  # Más nuevas primero; las que no tienen fecha (sólo Spotify) al final.
+  # Más nuevas primero; las que no tienen fecha al final.
   def reorder_newest_first
     Credit.unscoped.order(Arel.sql("release_date IS NULL, release_date DESC")).each_with_index do |credit, i|
       credit.update_column(:position, i)

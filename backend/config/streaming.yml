@@ -10,6 +10,7 @@
 #     - spotify: el id del link open.spotify.com/track/<id>   (obligatorio)
 #       apple: el id del track en Apple Music, si existe        (opcional: da preview de 30 s)
 #       artists: quién la firma, si no está en Apple             (opcional)
+#       released: fecha de salida, si no está en Apple            (opcional, para ordenar)
 #       role: qué hice                                          (opcional, default "producción")
 
 shared:
@@ -27,7 +28,63 @@ shared:
     "Esta Noche": 3ACikcrlzyKyBLPBCl9x00
 
   production_credits:
-    - spotify: 6sDaWOWAvRMhdw3l7FD8dm
+    # Falcon Music
+    - spotify: 6sDaWOWAvRMhdw3l7FD8dm   # JEUNE: Falcon Music Sessions #2
       apple: 1754427872
-    - spotify: 1W4GmgVyjAuY18MpXJNX0p
+    - spotify: 1W4GmgVyjAuY18MpXJNX0p   # KIATRA: Falcon Music Sessions #3
       artists: Falcon Music, Kiatra, Martini
+      released: 2024-09-03
+
+    # Jeune
+    - spotify: 0bqu72EX1yqhjEMy1UWv0d   # BLACK WIDOW
+      artists: Jeune
+      released: 2025-09-06
+    - spotify: 0s9l0EQmds60BEfTk2Jlry   # LONELY
+      artists: Jeune
+      released: 2026-02-05
+    - spotify: 7BVTeepbhCki0r7yEUmBgN   # Otro Tema
+      apple: 1869094160
+    - spotify: 4XuLlXELFyjnsCR51WnPot   # LIVE MY LIFE
+      artists: Jeune
+      released: 2026-02-05
+
+    # PandaCano
+    - spotify: 4SGaU7b32xm9XOt1x3U3QA   # Domingo Por La Noche
+      apple: 1892231710
+    - spotify: 57UIRcwlkM9jfbjjPnqlT9   # Labios Carmesí
+      apple: 6788219701
+    - spotify: 5SoKTZrAQEstcoDnr5ubeS   # Michael Scott
+      artists: PandaCano, Fery
+      released: 2025-09-04
+
+    # Kiatra
+    - spotify: 6hZUp1aRe0bUKpBgmW1EA8   # Momentum
+      apple: 1830883194
+
+    # W.Ortiz
+    - spotify: 4mT60kIbYc7AyfnmHQKCd9   # Blessed
+      artists: W.Ortiz, EMEH.
+      released: 2026-08-27
+    - spotify: 14ReZNHcLhOWHIT1mgkDea   # Messi Bunker Sesion #28
+      apple: 6793295339
+
+    # Duvi Perro
+    - spotify: 5055tq8WBR6V9xmVDG47LM   # Cachondeo
+      apple: 1825700458
+
+    # Bok Nero
+    - spotify: 1q2nxGd0qoubvfBKZ4fbK6   # Viva Colima
+      apple: 1886182088
+
+    # Ander
+    - spotify: 0Lmlw2Bqog2u3y8t27DXB4   # Solo
+      apple: 6798782395
+    - spotify: 2a0jsWGPKOhwCCoFp46IyT   # Falso Amor
+      apple: 6794922804
+
+    # Beto Reyes
+    - spotify: 3sow1G6C65FaXS8medZWnG   # San Andrés
+      apple: 6776245782
+    - spotify: 1J3wGG7gHa0BeZUfTMTarN   # INNEDIT
+      artists: Cotxrrito, Beto Reyes
+      released: 2025-12-17
