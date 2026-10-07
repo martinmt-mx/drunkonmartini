@@ -11,6 +11,8 @@ services:
     envVars:
       - key: SECRET_KEY_BASE
         generateValue: true # Render inventa una clave secreta segura
+      - key: CANONICAL_HOST
+        value: drunkonmartini.com # el subdominio .onrender.com redirige aquí
       - key: CONTACT_EMAIL
         value: martinimusic.prod@gmail.com # adonde llegan los mensajes del formulario
       - key: RESEND_API_KEY

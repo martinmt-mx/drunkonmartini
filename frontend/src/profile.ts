@@ -3,7 +3,7 @@
 export const profile = {
   name: 'drunkonmartini',
   handle: '@drunkonmartini',
-  email: 'martinimusic.prod@gmail.com',
+  email: 'booking@drunkonmartini.com', // Cloudflare Email Routing lo reenvía al Gmail
   sides: {
     a: {
       label: 'Lado A',
