@@ -55,7 +55,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: ENV.fetch("RENDER_EXTERNAL_HOSTNAME", "drunkonmartini.onrender.com") }
+  config.action_mailer.default_url_options = { host: ENV.fetch("CANONICAL_HOST", "drunkonmartini.com") }
 
   # Correos del formulario de contacto vía la API HTTP de Resend (lib/resend_delivery.rb).
   # No usamos SMTP: el plan gratis de Render bloquea los puertos 25, 465 y 587.
