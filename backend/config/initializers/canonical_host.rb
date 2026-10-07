@@ -12,21 +12,28 @@ class CanonicalHost
 
   def call(env)
     request = Rack::Request.new(env)
+    return @app.call(env) unless old_host?(request)
 
-    if redirect?(request)
-      location = "https://#{@host}#{request.fullpath}" # el #seccion lo conserva el navegador
-      [ 301, { "location" => location, "content-type" => "text/plain" }, [ "Mudado a #{location}\n" ] ]
+    if request.path.start_with?("/api/")
+      # Navegadores que guardaron la página vieja en caché la siguen mostrando sin
+      # preguntar, pero sus llamadas a la API sí llegan aquí. Les respondemos normal
+      # (si las redirigiéramos a otro dominio, fallarían por CORS) y les pedimos que
+      # borren su caché de este sitio: la próxima visita ya se redirige.
+      status, headers, body = @app.call(env)
+      headers["clear-site-data"] = '"cache"'
+      [ status, headers, body ]
+    elsif request.path == "/up"
+      @app.call(env) # el health check de Render tiene que responder 200
     else
-      @app.call(env)
+      location = "https://#{@host}#{request.fullpath}" # el #seccion lo conserva el navegador
+      [ 301, { "location" => location, "content-type" => "text/plain", "cache-control" => "no-cache" }, [ "Mudado a #{location}\n" ] ]
     end
   end
 
   private
 
-  def redirect?(request)
-    @host.present? &&
-      request.host.end_with?(".onrender.com") && # sólo el subdominio de Render (no localhost)
-      request.path != "/up" # el health check de Render tiene que responder 200
+  def old_host?(request)
+    @host.present? && request.host.end_with?(".onrender.com") # no afecta localhost
   end
 end
 
