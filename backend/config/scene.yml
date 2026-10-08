@@ -1,0 +1,48 @@
+# Sección "Escena": artistas de Colima que recomiendo. Después de editar: bin/rails music:sync
+#
+# Para agregar a alguien (pídele permiso primero):
+#   - name: cómo se escribe su nombre artístico               (obligatorio)
+#     instagram: su usuario, sin @                            (obligatorio)
+#     apple: id de la canción destacada en Apple Music        (opcional: da portada y preview)
+#            es el número final de music.apple.com/.../song/<nombre>/<id> o el ?i=<id>
+#     spotify: link de la canción o del artista en Spotify    (opcional; si no, se usa la búsqueda)
+#     genre: una o dos palabras                               (opcional)
+#     links: { tiktok: "...", youtube: "..." }                (opcional)
+#
+# El orden de la lista es el orden en la página.
+
+shared:
+  artists:
+    - name: PandaCano
+      instagram: pandacano
+      apple: 6810709996 # Estrella de Belén
+      genre: rap
+
+    - name: W. Ortiz
+      instagram: wortizoficial
+      apple: 1858105223 # Plakata (con Jeune y EMEH.)
+      genre: rap
+
+    - name: Jeune
+      instagram: jeune_music
+      apple: 1869094163 # SEMÁFORO
+      genre: rap
+
+    - name: laylattice
+      instagram: laylattice
+      apple: 1869564650 # Apache
+
+    - name: EMEH.
+      instagram: emeh.222
+      apple: 1875123012 # ETERNAL
+      genre: rap
+
+    - name: Fernando Pedroza
+      instagram: soyfernandopedroza
+      apple: 6806177027 # Manzanillo (Demo)
+      genre: rock
+
+    - name: Sweetjay
+      instagram: s.weet.jay
+      apple: 6814056864 # TODA LA NOCHE
+      genre: urbano

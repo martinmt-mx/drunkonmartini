@@ -1,4 +1,4 @@
-import type { Beat, Credit, Release } from './types'
+import type { Beat, Credit, Release, SceneArtist } from './types'
 
 // Copia de la API para cuando Rails no está disponible.
 // Releases y créditos: salida de `bin/rails music:sync` (GET /api/releases, /api/credits).
@@ -302,6 +302,107 @@ export const fallbackCredits: Credit[] = [
     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0a/7b/c5/0a7bc594-179a-3772-0f51-64d7e68a5251/mzaf_12938987048223602183.plus.aac.p.m4a",
     "apple_url": "https://music.apple.com/mx/album/jeune-falcon-music-sessions-2/1754427871?i=1754427872&uo=4",
     "spotify_url": "https://open.spotify.com/track/6sDaWOWAvRMhdw3l7FD8dm"
+  }
+]
+
+export const fallbackScene: SceneArtist[] = [
+  {
+    "id": 1,
+    "name": "PandaCano",
+    "genre": "rap",
+    "links": {},
+    "track_title": "Estrella de Belén",
+    "release_date": "2025-08-15",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4c/b6/f5/4cb6f554-7758-dabf-0040-7263427e1563/ebb6e743-2af9-488c-84bd-a5b4f8741db4.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c4/77/59/c4775939-c909-b53e-4cf9-acfc429bafab/mzaf_15540069989384419293.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/estrella-de-bel%C3%A9n/6810709994?i=6810709996&uo=4",
+    "apple_artist_url": "https://music.apple.com/mx/artist/pandacano/1802738867?uo=4",
+    "spotify_url": "https://open.spotify.com/search/PandaCano",
+    "instagram_url": "https://www.instagram.com/pandacano/"
+  },
+  {
+    "id": 2,
+    "name": "W. Ortiz",
+    "genre": "rap",
+    "links": {},
+    "track_title": "Plakata",
+    "release_date": "2025-11-28",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ab/e6/1a/abe61a32-8ec1-641f-bcdb-f185c9925053/1963624063860_cover.png/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/12/0f/58/120f585a-ae54-5de5-21e0-3d636c76b3fb/mzaf_6779963530707292390.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/plakata/1858105221?i=1858105223&uo=4",
+    "apple_artist_url": "https://music.apple.com/mx/artist/w-ortiz/1138977421?uo=4",
+    "spotify_url": "https://open.spotify.com/search/W.%20Ortiz",
+    "instagram_url": "https://www.instagram.com/wortizoficial/"
+  },
+  {
+    "id": 3,
+    "name": "Jeune",
+    "genre": "rap",
+    "links": {},
+    "track_title": "SEMÁFORO",
+    "release_date": "2026-02-05",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/67/20/d06720c5-ab69-abbb-eb5f-cc14a83d383b/199891387724_cover.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/71/c9/cc/71c9cca2-ba35-39de-00e4-9777ca9ad5e1/mzaf_15806123640470790049.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/sem%C3%A1foro/1869093810?i=1869094163&uo=4",
+    "apple_artist_url": "https://music.apple.com/mx/artist/jeune/1592377220?uo=4",
+    "spotify_url": "https://open.spotify.com/search/Jeune",
+    "instagram_url": "https://www.instagram.com/jeune_music/"
+  },
+  {
+    "id": 4,
+    "name": "laylattice",
+    "genre": null,
+    "links": {},
+    "track_title": "Apache",
+    "release_date": "2026-01-17",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fa/de/24/fade24a7-63d3-6e10-da11-f713a9413219/artwork.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/97/c3/fb/97c3fb2a-46c9-a297-6d3d-6c497c4bfaee/mzaf_4162762291094734558.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/apache/1869564647?i=1869564650&uo=4",
+    "apple_artist_url": "https://music.apple.com/mx/artist/laylattice/1785217677?uo=4",
+    "spotify_url": "https://open.spotify.com/search/laylattice",
+    "instagram_url": "https://www.instagram.com/laylattice/"
+  },
+  {
+    "id": 5,
+    "name": "EMEH.",
+    "genre": "rap",
+    "links": {},
+    "track_title": "ETERNAL",
+    "release_date": "2026-02-27",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7b/03/11/7b03110f-319c-4cde-4280-d39c7b357bf2/artwork.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/04/4f/7d/044f7d36-167b-9bcd-afb9-52ebb3246c56/mzaf_17219512193810816636.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/eternal/1875122999?i=1875123012&uo=4",
+    "apple_artist_url": "https://music.apple.com/mx/artist/emeh/1653443509?uo=4",
+    "spotify_url": "https://open.spotify.com/search/EMEH.",
+    "instagram_url": "https://www.instagram.com/emeh.222/"
+  },
+  {
+    "id": 6,
+    "name": "Fernando Pedroza",
+    "genre": "rock",
+    "links": {},
+    "track_title": "Manzanillo (Demo)",
+    "release_date": "2026-09-04",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/14/bb/f3/14bbf361-05d8-2408-486f-fae341f18dc8/885000325427.png/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c4/71/52/c471528c-6416-da21-e362-146116439112/mzaf_8404076067855513502.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/manzanillo-demo/6806176823?i=6806177027&uo=4",
+    "apple_artist_url": "https://music.apple.com/mx/artist/fernando-pedroza/1745575888?uo=4",
+    "spotify_url": "https://open.spotify.com/search/Fernando%20Pedroza",
+    "instagram_url": "https://www.instagram.com/soyfernandopedroza/"
+  },
+  {
+    "id": 7,
+    "name": "Sweetjay",
+    "genre": "urbano",
+    "links": {},
+    "track_title": "TODA LA NOCHE",
+    "release_date": "2026-08-24",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/08/0e/30/080e3025-0c99-e2db-8280-7dc4ca1af20f/artwork.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/4f/d2/2f4fd2d0-194d-dbe4-a495-78678756d0ab/mzaf_13508384738268066503.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/toda-la-noche/6814056857?i=6814056864&uo=4",
+    "apple_artist_url": "https://music.apple.com/mx/artist/sweetjay/1713051475?uo=4",
+    "spotify_url": "https://open.spotify.com/search/Sweetjay",
+    "instagram_url": "https://www.instagram.com/s.weet.jay/"
   }
 ]
 

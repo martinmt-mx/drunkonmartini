@@ -41,6 +41,22 @@ export type Credit = {
   spotify_url: string | null
 }
 
+/** Artista recomendado en la sección "Escena". */
+export type SceneArtist = {
+  id: number
+  name: string
+  genre: string | null
+  links: Record<string, string>
+  instagram_url: string
+  track_title: string | null
+  release_date: string | null
+  artwork_url: string | null
+  preview_url: string | null
+  apple_url: string | null
+  apple_artist_url: string | null
+  spotify_url: string | null
+}
+
 export type Beat = {
   id: number
   title: string

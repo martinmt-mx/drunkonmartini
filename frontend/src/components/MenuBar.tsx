@@ -16,11 +16,12 @@ export function MenuBar({ side, onSide, live }: { side: Side; onSide: (s: Side) 
   return (
     <nav className="menubar">
       <a className="menubar-brand" href="#top">
-        <Glass /> drunkonmartini<span className="dim">.os</span>
+        <Glass /> <span className="brand-name">drunkonmartini<span className="dim">.os</span></span>
       </a>
       <div className="menubar-items">
         <button className={side === 'a' ? 'on' : ''} onClick={() => onSide('a')}>Lado A</button>
         <button className={side === 'b' ? 'on' : ''} onClick={() => onSide('b')}>Lado B</button>
+        <a href="#escena">Escena</a>
         <a href="#contacto">Contacto</a>
       </div>
       <div className="menubar-status">

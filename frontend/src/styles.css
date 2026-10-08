@@ -242,6 +242,12 @@ textarea.input { resize: vertical; }
 
 /* ── Contacto ──────────────────────────────────── */
 .contact { margin-top: 64px; }
+
+/* ── Escena (artistas recomendados) ───────────── */
+.scene { margin-top: 64px; }
+.scene-intro { margin: 0 0 20px; max-width: 62ch; font-size: 14px; }
+.scene-intro .dim { display: block; margin-top: 6px; font-size: 12px; }
+.scene-grid .credit-title { font-size: 20px; }
 .form { display: grid; gap: 14px; }
 .form label { display: grid; gap: 4px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -322,7 +328,7 @@ textarea.input { resize: vertical; }
   .viz, .player-time { display: none; }
 }
 @media (max-width: 420px) {
-  .menubar-brand .dim, .menubar-status { display: none; }
+  .menubar-brand .brand-name, .menubar-status { display: none; } /* en celular sólo queda la copa: así caben las 4 secciones */
   .menubar-items { margin-left: auto; gap: 12px; }
   .cassette-role { font-size: 22px; }
 }
