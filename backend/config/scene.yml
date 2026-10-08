@@ -5,7 +5,9 @@
 #     instagram: su usuario, sin @                            (obligatorio)
 #     apple: id de la canción destacada en Apple Music        (opcional: da portada y preview)
 #            es el número final de music.apple.com/.../song/<nombre>/<id> o el ?i=<id>
-#     spotify: link de la canción o del artista en Spotify    (opcional; si no, se usa la búsqueda)
+#     apple_artist: id del perfil en Apple Music              (opcional: sólo si la canción es
+#            de otro artista, p. ej. un feat.; si no, se usa el artista de la canción)
+#     spotify: link del PERFIL del artista en Spotify         (opcional; sin él no hay botón)
 #     genre: una o dos palabras                               (opcional)
 #     links: { tiktok: "...", youtube: "..." }                (opcional)
 #
@@ -15,26 +17,32 @@ shared:
   artists:
     - name: PandaCano
       instagram: pandacano
-      apple: 6810709996 # Estrella de Belén
+      apple: 6788219701 # Labios Carmesí (su lanzamiento más reciente)
+      spotify: https://open.spotify.com/artist/0hBJWOdDDK8C3S9H98xipW
       genre: rap
 
     - name: W. Ortiz
       instagram: wortizoficial
-      apple: 1858105223 # Plakata (con Jeune y EMEH.)
+      apple: 1762700137 # La Botella
+      spotify: https://open.spotify.com/artist/09wZVcOKgB59Ew0R8yWe3Z
       genre: rap
 
     - name: Jeune
       instagram: jeune_music
-      apple: 1869094163 # SEMÁFORO
+      apple: 1869094146 # LONELY
+      spotify: https://open.spotify.com/artist/7zPWsZXnCK7PPtA1iJkdJs
       genre: rap
 
     - name: laylattice
       instagram: laylattice
-      apple: 1869564650 # Apache
+      apple: 1886182088 # Viva Colima (Bok Nero feat. laylattice)
+      apple_artist: 1785217677 # su propio perfil, no el de Bok Nero
+      spotify: https://open.spotify.com/artist/5KOFMADPvNFrtVID0uxMdU
 
     - name: EMEH.
       instagram: emeh.222
       apple: 1875123012 # ETERNAL
+      spotify: https://open.spotify.com/artist/77LDXwct9zyAuRXdy1x4MV
       genre: rap
 
     - name: Fernando Pedroza

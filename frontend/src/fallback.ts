@@ -311,13 +311,13 @@ export const fallbackScene: SceneArtist[] = [
     "name": "PandaCano",
     "genre": "rap",
     "links": {},
-    "track_title": "Estrella de Belén",
-    "release_date": "2025-08-15",
-    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4c/b6/f5/4cb6f554-7758-dabf-0040-7263427e1563/ebb6e743-2af9-488c-84bd-a5b4f8741db4.jpg/600x600bb.jpg",
-    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c4/77/59/c4775939-c909-b53e-4cf9-acfc429bafab/mzaf_15540069989384419293.plus.aac.p.m4a",
-    "apple_url": "https://music.apple.com/mx/album/estrella-de-bel%C3%A9n/6810709994?i=6810709996&uo=4",
+    "track_title": "Labios Carmesí",
+    "release_date": "2026-07-30",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/16/d9/ea/16d9eafa-c3b8-7211-697d-09e1fae9e434/117377.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b8/9a/10/b89a10ab-4962-0eed-f41b-4c6733108f75/mzaf_705106676395365574.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/labios-carmes%C3%AD/6788219700?i=6788219701&uo=4",
     "apple_artist_url": "https://music.apple.com/mx/artist/pandacano/1802738867?uo=4",
-    "spotify_url": "https://open.spotify.com/search/PandaCano",
+    "spotify_url": "https://open.spotify.com/artist/0hBJWOdDDK8C3S9H98xipW",
     "instagram_url": "https://www.instagram.com/pandacano/"
   },
   {
@@ -325,13 +325,13 @@ export const fallbackScene: SceneArtist[] = [
     "name": "W. Ortiz",
     "genre": "rap",
     "links": {},
-    "track_title": "Plakata",
-    "release_date": "2025-11-28",
-    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ab/e6/1a/abe61a32-8ec1-641f-bcdb-f185c9925053/1963624063860_cover.png/600x600bb.jpg",
-    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/12/0f/58/120f585a-ae54-5de5-21e0-3d636c76b3fb/mzaf_6779963530707292390.plus.aac.p.m4a",
-    "apple_url": "https://music.apple.com/mx/album/plakata/1858105221?i=1858105223&uo=4",
+    "track_title": "La Botella",
+    "release_date": "2024-08-13",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/15/54/1e/15541e54-1ac7-e4a0-4c45-70658e7230a7/1963622397882_cover.jpg/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/61/21/7c/61217c30-f42f-68de-16b4-f84ac275bbd7/mzaf_9052285901554389487.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/la-botella/1762700133?i=1762700137&uo=4",
     "apple_artist_url": "https://music.apple.com/mx/artist/w-ortiz/1138977421?uo=4",
-    "spotify_url": "https://open.spotify.com/search/W.%20Ortiz",
+    "spotify_url": "https://open.spotify.com/artist/09wZVcOKgB59Ew0R8yWe3Z",
     "instagram_url": "https://www.instagram.com/wortizoficial/"
   },
   {
@@ -339,13 +339,13 @@ export const fallbackScene: SceneArtist[] = [
     "name": "Jeune",
     "genre": "rap",
     "links": {},
-    "track_title": "SEMÁFORO",
+    "track_title": "LONELY",
     "release_date": "2026-02-05",
     "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/67/20/d06720c5-ab69-abbb-eb5f-cc14a83d383b/199891387724_cover.jpg/600x600bb.jpg",
-    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/71/c9/cc/71c9cca2-ba35-39de-00e4-9777ca9ad5e1/mzaf_15806123640470790049.plus.aac.p.m4a",
-    "apple_url": "https://music.apple.com/mx/album/sem%C3%A1foro/1869093810?i=1869094163&uo=4",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7a/2d/46/7a2d46dc-e79f-0207-091f-72b69f033e5e/mzaf_4995520592407451345.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/lonely/1869093810?i=1869094146&uo=4",
     "apple_artist_url": "https://music.apple.com/mx/artist/jeune/1592377220?uo=4",
-    "spotify_url": "https://open.spotify.com/search/Jeune",
+    "spotify_url": "https://open.spotify.com/artist/7zPWsZXnCK7PPtA1iJkdJs",
     "instagram_url": "https://www.instagram.com/jeune_music/"
   },
   {
@@ -353,13 +353,13 @@ export const fallbackScene: SceneArtist[] = [
     "name": "laylattice",
     "genre": null,
     "links": {},
-    "track_title": "Apache",
-    "release_date": "2026-01-17",
-    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fa/de/24/fade24a7-63d3-6e10-da11-f713a9413219/artwork.jpg/600x600bb.jpg",
-    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/97/c3/fb/97c3fb2a-46c9-a297-6d3d-6c497c4bfaee/mzaf_4162762291094734558.plus.aac.p.m4a",
-    "apple_url": "https://music.apple.com/mx/album/apache/1869564647?i=1869564650&uo=4",
-    "apple_artist_url": "https://music.apple.com/mx/artist/laylattice/1785217677?uo=4",
-    "spotify_url": "https://open.spotify.com/search/laylattice",
+    "track_title": "Viva Colima (feat. Laylattice)",
+    "release_date": "2026-04-03",
+    "artwork_url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d9/2e/ac/d92eac5b-0e5a-4454-62bb-0071ed13d1f4/810168085869.png/600x600bb.jpg",
+    "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3f/7b/8c/3f7b8c22-f046-f8f0-a1b4-228090ee479c/mzaf_6577336310904423944.plus.aac.p.m4a",
+    "apple_url": "https://music.apple.com/mx/album/viva-colima-feat-laylattice/1886182087?i=1886182088&uo=4",
+    "apple_artist_url": "https://music.apple.com/mx/artist/1785217677",
+    "spotify_url": "https://open.spotify.com/artist/5KOFMADPvNFrtVID0uxMdU",
     "instagram_url": "https://www.instagram.com/laylattice/"
   },
   {
@@ -373,7 +373,7 @@ export const fallbackScene: SceneArtist[] = [
     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/04/4f/7d/044f7d36-167b-9bcd-afb9-52ebb3246c56/mzaf_17219512193810816636.plus.aac.p.m4a",
     "apple_url": "https://music.apple.com/mx/album/eternal/1875122999?i=1875123012&uo=4",
     "apple_artist_url": "https://music.apple.com/mx/artist/emeh/1653443509?uo=4",
-    "spotify_url": "https://open.spotify.com/search/EMEH.",
+    "spotify_url": "https://open.spotify.com/artist/77LDXwct9zyAuRXdy1x4MV",
     "instagram_url": "https://www.instagram.com/emeh.222/"
   },
   {
@@ -387,7 +387,7 @@ export const fallbackScene: SceneArtist[] = [
     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c4/71/52/c471528c-6416-da21-e362-146116439112/mzaf_8404076067855513502.plus.aac.p.m4a",
     "apple_url": "https://music.apple.com/mx/album/manzanillo-demo/6806176823?i=6806177027&uo=4",
     "apple_artist_url": "https://music.apple.com/mx/artist/fernando-pedroza/1745575888?uo=4",
-    "spotify_url": "https://open.spotify.com/search/Fernando%20Pedroza",
+    "spotify_url": null,
     "instagram_url": "https://www.instagram.com/soyfernandopedroza/"
   },
   {
@@ -401,7 +401,7 @@ export const fallbackScene: SceneArtist[] = [
     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/4f/d2/2f4fd2d0-194d-dbe4-a495-78678756d0ab/mzaf_13508384738268066503.plus.aac.p.m4a",
     "apple_url": "https://music.apple.com/mx/album/toda-la-noche/6814056857?i=6814056864&uo=4",
     "apple_artist_url": "https://music.apple.com/mx/artist/sweetjay/1713051475?uo=4",
-    "spotify_url": "https://open.spotify.com/search/Sweetjay",
+    "spotify_url": null,
     "instagram_url": "https://www.instagram.com/s.weet.jay/"
   }
 ]

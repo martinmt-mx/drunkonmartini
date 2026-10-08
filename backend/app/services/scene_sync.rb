@@ -1,10 +1,9 @@
 require "net/http"
 require "json"
-require "erb"
 
 # Llena la tabla scene_artists con config/scene.yml. Si el artista trae el id de una
 # canción de Apple Music, de ahí salen título, portada, preview y links de Apple.
-# Sin link de Spotify, el botón abre la búsqueda del artista en Spotify.
+# Sin link de Spotify no se muestra ese botón (nada de mandar a una búsqueda).
 class SceneSync
   APPLE_LOOKUP = "https://itunes.apple.com/lookup".freeze
 
@@ -44,8 +43,9 @@ class SceneSync
       artwork_url: song&.dig("artworkUrl100")&.sub("100x100bb", "600x600bb"),
       preview_url: song&.dig("previewUrl"),
       apple_url: song&.dig("trackViewUrl"),
-      apple_artist_url: song&.dig("artistViewUrl"),
-      spotify_url: entry[:spotify].presence || "https://open.spotify.com/search/#{ERB::Util.url_encode(entry[:name])}",
+      # En un feat. el artista de la canción es otro: apple_artist apunta al perfil correcto.
+      apple_artist_url: entry[:apple_artist] ? "https://music.apple.com/#{@country}/artist/#{entry[:apple_artist]}" : song&.dig("artistViewUrl"),
+      spotify_url: entry[:spotify].presence,
       position:
     )
   end
