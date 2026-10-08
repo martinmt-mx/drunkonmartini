@@ -36,6 +36,7 @@ Si Rails no está corriendo, el frontend usa `src/fallback.ts` y en la barra apa
 |---|---|
 | Bio, redes, correo | `frontend/src/profile.ts` |
 | Tus lanzamientos (Lado A) y créditos de producción (Lado B) | `backend/config/streaming.yml` → `bin/rails music:sync` |
+| Artistas recomendados (sección Escena) | `backend/config/scene.yml` → `bin/rails music:sync` |
 | Beats (nombre, BPM, tonalidad, precio) | `backend/db/seeds.rb` → `bin/rails db:seed` |
 | Audio de los beats | `frontend/public/audio/beats/*.mp3`: previews de 60 s; los WAV originales no se suben |
 | Colores de cada lado / nueva era | `frontend/src/styles.css` (`--accent`) |
@@ -59,6 +60,7 @@ se reproduce el archivo real.
 - `GET  /api/releases`: releases con sus tracks
 - `GET  /api/beats`: beats disponibles
 - `GET  /api/credits`: canciones de otros artistas donde participé en la producción
+- `GET  /api/scene`: artistas de Colima recomendados (sección Escena)
 - `POST /api/messages`: `{ message: { name, email, body, kind } }`, kind ∈ booking · beat · colab · guestbook.
   Cada mensaje se guarda y se manda por correo; máximo 5 cada 10 minutos por IP, y un campo trampa
   invisible descarta a los bots.
