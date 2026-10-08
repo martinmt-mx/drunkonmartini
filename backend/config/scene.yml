@@ -25,32 +25,35 @@ shared:
       instagram: wortizoficial
       apple: 1762700137 # La Botella
       spotify: https://open.spotify.com/artist/09wZVcOKgB59Ew0R8yWe3Z
-      genre: rap
+      genre: reggaetón
 
     - name: Jeune
       instagram: jeune_music
       apple: 1869094146 # LONELY
       spotify: https://open.spotify.com/artist/7zPWsZXnCK7PPtA1iJkdJs
-      genre: rap
+      genre: pluggnb
 
     - name: laylattice
       instagram: laylattice
       apple: 1886182088 # Viva Colima (Bok Nero feat. laylattice)
       apple_artist: 1785217677 # su propio perfil, no el de Bok Nero
       spotify: https://open.spotify.com/artist/5KOFMADPvNFrtVID0uxMdU
+      genre: electrónica
 
     - name: EMEH.
       instagram: emeh.222
       apple: 1875123012 # ETERNAL
       spotify: https://open.spotify.com/artist/77LDXwct9zyAuRXdy1x4MV
-      genre: rap
+      genre: trap experimental
 
     - name: Fernando Pedroza
       instagram: soyfernandopedroza
       apple: 6806177027 # Manzanillo (Demo)
-      genre: rock
+      spotify: https://open.spotify.com/artist/0ZipFPSwHeDvell6L5WfkZ
+      genre: indie
 
     - name: Sweetjay
       instagram: s.weet.jay
       apple: 6814056864 # TODA LA NOCHE
+      spotify: https://open.spotify.com/artist/3iRxXFhGui4HYHDrhgWgr9
       genre: urbano

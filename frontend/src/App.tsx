@@ -12,10 +12,12 @@ import { Scene } from './components/Scene'
 import { PlayerProvider } from './player/PlayerContext'
 import type { Beat, Credit, Release, SceneArtist, Side } from './types'
 
-const sideFromHash = (): Side => (location.hash === '#productor' ? 'b' : 'a')
-/** Sólo #artista y #productor cambian de lado; #escena, #contacto, etc. sólo hacen scroll. */
+/** Cada pestaña tiene su #: así se puede compartir el link directo a cualquiera. */
+const HASH_FOR_SIDE: Record<Side, string> = { a: '#artista', b: '#productor', c: '#escena' }
+/** Pestaña del # actual; null si el # no es de una pestaña (p. ej. #contacto sólo hace scroll). */
 const sideForHash = (): Side | null =>
-  location.hash === '#productor' ? 'b' : location.hash === '#artista' ? 'a' : null
+  (Object.keys(HASH_FOR_SIDE) as Side[]).find((s) => HASH_FOR_SIDE[s] === location.hash) ?? null
+const sideFromHash = (): Side => sideForHash() ?? 'a'
 
 export function App() {
   const [side, setSideState] = useState<Side>(sideFromHash)
@@ -51,7 +53,7 @@ export function App() {
 
   const setSide = useCallback((s: Side) => {
     setSideState(s)
-    history.replaceState(null, '', s === 'b' ? '#productor' : '#artista')
+    history.replaceState(null, '', HASH_FOR_SIDE[s])
     document.getElementById('lado')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [])
 
@@ -72,9 +74,10 @@ export function App() {
       <main className="page">
         <Hero side={side} onSide={setSide} />
         <div id="lado" className="side-content" key={side}>
-          {side === 'a' ? <ArtistSide releases={releases} /> : <ProducerSide beats={beats} credits={credits} onLicense={onLicense} />}
+          {side === 'a' && <ArtistSide releases={releases} />}
+          {side === 'b' && <ProducerSide beats={beats} credits={credits} onLicense={onLicense} />}
+          {side === 'c' && <Scene artists={scene} />}
         </div>
-        <Scene artists={scene} side={side} />
         <Contact prefill={prefill} />
         <Footer />
       </main>

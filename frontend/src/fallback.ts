@@ -323,7 +323,7 @@ export const fallbackScene: SceneArtist[] = [
   {
     "id": 2,
     "name": "W. Ortiz",
-    "genre": "rap",
+    "genre": "reggaetón",
     "links": {},
     "track_title": "La Botella",
     "release_date": "2024-08-13",
@@ -337,7 +337,7 @@ export const fallbackScene: SceneArtist[] = [
   {
     "id": 3,
     "name": "Jeune",
-    "genre": "rap",
+    "genre": "pluggnb",
     "links": {},
     "track_title": "LONELY",
     "release_date": "2026-02-05",
@@ -351,7 +351,7 @@ export const fallbackScene: SceneArtist[] = [
   {
     "id": 4,
     "name": "laylattice",
-    "genre": null,
+    "genre": "electrónica",
     "links": {},
     "track_title": "Viva Colima (feat. Laylattice)",
     "release_date": "2026-04-03",
@@ -365,7 +365,7 @@ export const fallbackScene: SceneArtist[] = [
   {
     "id": 5,
     "name": "EMEH.",
-    "genre": "rap",
+    "genre": "trap experimental",
     "links": {},
     "track_title": "ETERNAL",
     "release_date": "2026-02-27",
@@ -379,7 +379,7 @@ export const fallbackScene: SceneArtist[] = [
   {
     "id": 6,
     "name": "Fernando Pedroza",
-    "genre": "rock",
+    "genre": "indie",
     "links": {},
     "track_title": "Manzanillo (Demo)",
     "release_date": "2026-09-04",
@@ -387,7 +387,7 @@ export const fallbackScene: SceneArtist[] = [
     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c4/71/52/c471528c-6416-da21-e362-146116439112/mzaf_8404076067855513502.plus.aac.p.m4a",
     "apple_url": "https://music.apple.com/mx/album/manzanillo-demo/6806176823?i=6806177027&uo=4",
     "apple_artist_url": "https://music.apple.com/mx/artist/fernando-pedroza/1745575888?uo=4",
-    "spotify_url": null,
+    "spotify_url": "https://open.spotify.com/artist/0ZipFPSwHeDvell6L5WfkZ",
     "instagram_url": "https://www.instagram.com/soyfernandopedroza/"
   },
   {
@@ -401,7 +401,7 @@ export const fallbackScene: SceneArtist[] = [
     "preview_url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2f/4f/d2/2f4fd2d0-194d-dbe4-a495-78678756d0ab/mzaf_13508384738268066503.plus.aac.p.m4a",
     "apple_url": "https://music.apple.com/mx/album/toda-la-noche/6814056857?i=6814056864&uo=4",
     "apple_artist_url": "https://music.apple.com/mx/artist/sweetjay/1713051475?uo=4",
-    "spotify_url": null,
+    "spotify_url": "https://open.spotify.com/artist/3iRxXFhGui4HYHDrhgWgr9",
     "instagram_url": "https://www.instagram.com/s.weet.jay/"
   }
 ]

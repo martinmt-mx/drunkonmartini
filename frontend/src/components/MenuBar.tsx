@@ -21,7 +21,7 @@ export function MenuBar({ side, onSide, live }: { side: Side; onSide: (s: Side) 
       <div className="menubar-items">
         <button className={side === 'a' ? 'on' : ''} onClick={() => onSide('a')}>Lado A</button>
         <button className={side === 'b' ? 'on' : ''} onClick={() => onSide('b')}>Lado B</button>
-        <a href="#escena">Escena</a>
+        <button className={side === 'c' ? 'on' : ''} onClick={() => onSide('c')}>Escena</button>
         <a href="#contacto">Contacto</a>
       </div>
       <div className="menubar-status">

@@ -85,4 +85,5 @@ export type Playable = {
   rootNote: number
 }
 
-export type Side = 'a' | 'b'
+/** a = Artista, b = Productor, c = Escena (artistas recomendados). */
+export type Side = 'a' | 'b' | 'c'

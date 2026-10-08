@@ -17,6 +17,12 @@ export const profile = {
       tagline: 'de trap a cumbia: si suena, lo produzco',
       bio: 'Produzco de todo: trap, rap, R&B, pop, reggaetón, rock, cumbia y electrónica. Aquí puedes escuchar canciones en las que he trabajado y mis beats a la venta. Si te late uno, escríbeme para cotizar una licencia o una producción a la medida.',
     },
+    c: {
+      label: 'Bonus',
+      role: 'Escena',
+      tagline: 'música de colima que tienes que escuchar',
+      bio: 'Artistas de Colima que escucho y recomiendo. Dale play, síguelos y apoya la escena local.',
+    },
   },
   socials: [
     { label: 'Instagram', href: 'https://instagram.com/drunkonmartini' },
