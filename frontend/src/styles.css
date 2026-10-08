@@ -20,6 +20,11 @@
   --accent-soft: rgb(255 176 0 / 0.12);
 }
 
+:root[data-side='c'] {
+  --accent: #a46bff;          /* Escena: violeta neón */
+  --accent-soft: rgb(164 107 255 / 0.14);
+}
+
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 56px; }
@@ -93,7 +98,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @keyframes blink { 50% { opacity: 0; } }
 
 /* Selector tipo cassette */
-.cassette { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 560px; }
+.cassette { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 780px; }
 .cassette-side {
   position: relative; text-align: left;
   padding: 16px 18px 52px;
@@ -242,6 +247,27 @@ textarea.input { resize: vertical; }
 
 /* ── Contacto ──────────────────────────────────── */
 .contact { margin-top: 64px; }
+
+/* ── Escena (artistas recomendados) ───────────── */
+/* Lista de tarjetas anchas: portada a la izquierda, datos a la derecha */
+.scene-invite { margin: 12px 0 0; font-size: 13px; }
+.scene-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.scene-card {
+  display: flex; align-items: center; gap: 22px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: rgb(13 13 18 / 0.8);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.scene-card:hover, .scene-card.playing { border-color: var(--accent); box-shadow: 0 0 28px var(--accent-soft); }
+.scene-card .cover { width: 132px; flex: none; }
+.scene-body { flex: 1; min-width: 0; display: grid; gap: 12px; }
+.scene-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; }
+.scene-name { margin: 0; font: italic 400 36px/1 var(--serif); }
+.scene-genre { color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; font-size: 15px; }
+.scene-track { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.scene-track-title { font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scene-card.playing .scene-track-title { color: var(--accent); }
 .form { display: grid; gap: 14px; }
 .form label { display: grid; gap: 4px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -290,6 +316,7 @@ textarea.input { resize: vertical; }
 /* El reproductor conserva el color del lado del track que suena */
 .player.side-a { --accent: #ff2a3d; --accent-soft: rgb(255 42 61 / 0.14); }
 .player.side-b { --accent: #ffb000; --accent-soft: rgb(255 176 0 / 0.12); }
+.player.side-c { --accent: #a46bff; --accent-soft: rgb(164 107 255 / 0.14); }
 @keyframes rise { from { opacity: 0; transform: translate(-50%, 16px); } }
 .viz { color: var(--accent); width: 96px; height: 36px; flex: none; }
 .player .play { border-color: var(--accent); color: var(--accent); }
@@ -304,6 +331,12 @@ textarea.input { resize: vertical; }
 
 /* ── Responsive ────────────────────────────────── */
 @media (max-width: 720px) {
+  .cassette { gap: 8px; }
+  .cassette-side { padding: 12px 12px 44px; }
+  .cassette-role { font-size: 22px; }
+  .scene-card { align-items: flex-start; gap: 14px; padding: 12px; }
+  .scene-card .cover { width: 88px; }
+  .scene-name { font-size: 26px; }
   .menubar { gap: 12px; }
   .menubar-status .np, .menubar-status .dim { display: none; }
   .hero { padding: 64px 0 40px; }
@@ -322,9 +355,11 @@ textarea.input { resize: vertical; }
   .viz, .player-time { display: none; }
 }
 @media (max-width: 420px) {
-  .menubar-brand .dim, .menubar-status { display: none; }
+  .menubar-brand .brand-name, .menubar-status { display: none; } /* en celular sólo queda la copa: así caben las 4 secciones */
   .menubar-items { margin-left: auto; gap: 12px; }
-  .cassette-role { font-size: 22px; }
+  .cassette-role { font-size: 18px; }
+  .cassette-side { padding: 10px 10px 40px; }
+  .cassette-reels { left: 10px; right: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

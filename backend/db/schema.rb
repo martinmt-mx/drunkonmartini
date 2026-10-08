@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_06_020055) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_08_225328) do
   create_table "beats", force: :cascade do |t|
     t.string "title"
     t.integer "bpm"
@@ -69,6 +69,25 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_06_020055) do
     t.string "apple_url"
     t.string "spotify_url"
     t.index ["apple_collection_id"], name: "index_releases_on_apple_collection_id", unique: true
+  end
+
+  create_table "scene_artists", force: :cascade do |t|
+    t.string "instagram", null: false
+    t.string "name", null: false
+    t.string "genre"
+    t.json "links", default: {}
+    t.bigint "apple_track_id"
+    t.string "track_title"
+    t.date "release_date"
+    t.string "artwork_url"
+    t.string "preview_url"
+    t.string "apple_url"
+    t.string "apple_artist_url"
+    t.string "spotify_url"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instagram"], name: "index_scene_artists_on_instagram", unique: true
   end
 
   create_table "tracks", force: :cascade do |t|

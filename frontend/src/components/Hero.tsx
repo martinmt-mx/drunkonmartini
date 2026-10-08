@@ -17,8 +17,8 @@ export function Hero({ side, onSide }: { side: Side; onSide: (s: Side) => void }
         <span className="caret" aria-hidden>▍</span>
       </p>
 
-      <div className="cassette" role="tablist" aria-label="Elige un lado">
-        {(['a', 'b'] as const).map((s) => (
+      <div className="cassette" role="tablist" aria-label="Elige una sección">
+        {(['a', 'b', 'c'] as const).map((s) => (
           <button
             key={s}
             role="tab"

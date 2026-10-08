@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { fetchBeats, fetchCredits, fetchReleases } from './api'
+import { fetchBeats, fetchCredits, fetchReleases, fetchScene } from './api'
 import { ArtistSide } from './components/ArtistSide'
 import { AudioRing } from './components/AudioRing'
 import { Contact, type ContactPrefill } from './components/Contact'
@@ -8,30 +8,41 @@ import { Hero } from './components/Hero'
 import { MenuBar } from './components/MenuBar'
 import { Player } from './components/Player'
 import { ProducerSide } from './components/ProducerSide'
+import { Scene } from './components/Scene'
 import { PlayerProvider } from './player/PlayerContext'
-import type { Beat, Credit, Release, Side } from './types'
+import type { Beat, Credit, Release, SceneArtist, Side } from './types'
 
-const sideFromHash = (): Side => (location.hash === '#productor' ? 'b' : 'a')
+/** Cada pestaña tiene su #: así se puede compartir el link directo a cualquiera. */
+const HASH_FOR_SIDE: Record<Side, string> = { a: '#artista', b: '#productor', c: '#escena' }
+/** Pestaña del # actual; null si el # no es de una pestaña (p. ej. #contacto sólo hace scroll). */
+const sideForHash = (): Side | null =>
+  (Object.keys(HASH_FOR_SIDE) as Side[]).find((s) => HASH_FOR_SIDE[s] === location.hash) ?? null
+const sideFromHash = (): Side => sideForHash() ?? 'a'
 
 export function App() {
   const [side, setSideState] = useState<Side>(sideFromHash)
   const [releases, setReleases] = useState<Release[]>([])
   const [beats, setBeats] = useState<Beat[]>([])
   const [credits, setCredits] = useState<Credit[]>([])
+  const [scene, setScene] = useState<SceneArtist[]>([])
   const [live, setLive] = useState<boolean | null>(null)
   const [prefill, setPrefill] = useState<ContactPrefill | null>(null)
 
   useEffect(() => {
-    Promise.all([fetchReleases(), fetchBeats(), fetchCredits()]).then(([r, b, c]) => {
+    Promise.all([fetchReleases(), fetchBeats(), fetchCredits(), fetchScene()]).then(([r, b, c, s]) => {
       setReleases(r.data)
       setBeats(b.data)
       setCredits(c.data)
-      setLive(r.live && b.live && c.live)
+      setScene(s.data)
+      setLive(r.live && b.live && c.live && s.live)
     })
   }, [])
 
   useEffect(() => {
-    const onHash = () => setSideState(sideFromHash())
+    const onHash = () => {
+      const s = sideForHash()
+      if (s) setSideState(s)
+    }
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
@@ -42,7 +53,7 @@ export function App() {
 
   const setSide = useCallback((s: Side) => {
     setSideState(s)
-    history.replaceState(null, '', s === 'b' ? '#productor' : '#artista')
+    history.replaceState(null, '', HASH_FOR_SIDE[s])
     document.getElementById('lado')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [])
 
@@ -63,7 +74,9 @@ export function App() {
       <main className="page">
         <Hero side={side} onSide={setSide} />
         <div id="lado" className="side-content" key={side}>
-          {side === 'a' ? <ArtistSide releases={releases} /> : <ProducerSide beats={beats} credits={credits} onLicense={onLicense} />}
+          {side === 'a' && <ArtistSide releases={releases} />}
+          {side === 'b' && <ProducerSide beats={beats} credits={credits} onLicense={onLicense} />}
+          {side === 'c' && <Scene artists={scene} />}
         </div>
         <Contact prefill={prefill} />
         <Footer />

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :releases, only: :index
     resources :beats, only: :index
     resources :credits, only: :index
+    get "scene", to: "scene#index" # artistas recomendados (sección "Escena")
     resources :messages, only: :create
   end
 end

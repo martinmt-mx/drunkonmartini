@@ -10,7 +10,7 @@ import { usePlayer } from '../player/PlayerContext'
 //   cintas brillantes típicas de NCS.
 // - Un aro grueso y brillante marca el borde y vibra con los bajos.
 
-const COLORS = { a: '255, 42, 61', b: '255, 176, 0' } as const
+const COLORS = { a: '255, 42, 61', b: '255, 176, 0', c: '164, 107, 255' } as const
 
 /** Ondas sobre la esfera: frecuencia en latitud (lat), en longitud (lon), velocidad y zona del espectro. */
 const MODES = [

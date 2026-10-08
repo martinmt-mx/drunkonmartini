@@ -1,0 +1,59 @@
+# Sección "Escena": artistas de Colima que recomiendo. Después de editar: bin/rails music:sync
+#
+# Para agregar a alguien (pídele permiso primero):
+#   - name: cómo se escribe su nombre artístico               (obligatorio)
+#     instagram: su usuario, sin @                            (obligatorio)
+#     apple: id de la canción destacada en Apple Music        (opcional: da portada y preview)
+#            es el número final de music.apple.com/.../song/<nombre>/<id> o el ?i=<id>
+#     apple_artist: id del perfil en Apple Music              (opcional: sólo si la canción es
+#            de otro artista, p. ej. un feat.; si no, se usa el artista de la canción)
+#     spotify: link del PERFIL del artista en Spotify         (opcional; sin él no hay botón)
+#     genre: una o dos palabras                               (opcional)
+#     links: { tiktok: "...", youtube: "..." }                (opcional)
+#
+# El orden de la lista es el orden en la página.
+
+shared:
+  artists:
+    - name: PandaCano
+      instagram: pandacano
+      apple: 6788219701 # Labios Carmesí (su lanzamiento más reciente)
+      spotify: https://open.spotify.com/artist/0hBJWOdDDK8C3S9H98xipW
+      genre: rap
+
+    - name: W. Ortiz
+      instagram: wortizoficial
+      apple: 1762700137 # La Botella
+      spotify: https://open.spotify.com/artist/09wZVcOKgB59Ew0R8yWe3Z
+      genre: reggaetón
+
+    - name: Jeune
+      instagram: jeune_music
+      apple: 1869094146 # LONELY
+      spotify: https://open.spotify.com/artist/7zPWsZXnCK7PPtA1iJkdJs
+      genre: pluggnb
+
+    - name: laylattice
+      instagram: laylattice
+      apple: 1886182088 # Viva Colima (Bok Nero feat. laylattice)
+      apple_artist: 1785217677 # su propio perfil, no el de Bok Nero
+      spotify: https://open.spotify.com/artist/5KOFMADPvNFrtVID0uxMdU
+      genre: electrónica
+
+    - name: EMEH.
+      instagram: emeh.222
+      apple: 1875123012 # ETERNAL
+      spotify: https://open.spotify.com/artist/77LDXwct9zyAuRXdy1x4MV
+      genre: trap experimental
+
+    - name: Fernando Pedroza
+      instagram: soyfernandopedroza
+      apple: 6806177027 # Manzanillo (Demo)
+      spotify: https://open.spotify.com/artist/0ZipFPSwHeDvell6L5WfkZ
+      genre: indie
+
+    - name: Sweetjay
+      instagram: s.weet.jay
+      apple: 6814056864 # TODA LA NOCHE
+      spotify: https://open.spotify.com/artist/3iRxXFhGui4HYHDrhgWgr9
+      genre: urbano

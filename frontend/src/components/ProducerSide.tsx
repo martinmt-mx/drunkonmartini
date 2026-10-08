@@ -36,14 +36,7 @@ export function ProducerSide({ beats, credits, onLicense }: {
         <p className="bio">{profile.sides.b.bio}</p>
       </Win>
 
-      {credits.length > 0 && (
-        <Win title={`creditos_de_produccion/ (${credits.length})`} className="span-2">
-          <ul className="credits">
-            {credits.map((c) => <CreditCard key={c.id} credit={c} />)}
-          </ul>
-        </Win>
-      )}
-
+      {/* Primero los beats (lo que se puede comprar), después los créditos como respaldo. */}
       <Win title={`C:\\beats\\  —  ${visible.length} de ${beats.length}`} className="span-2">
         <div className="filters">
           <input
@@ -84,6 +77,14 @@ export function ProducerSide({ beats, credits, onLicense }: {
           {visible.length === 0 && <p className="dim empty">nada por aquí. prueba otro filtro.</p>}
         </div>
       </Win>
+
+      {credits.length > 0 && (
+        <Win title={`creditos_de_produccion/ (${credits.length})`} className="span-2">
+          <ul className="credits">
+            {credits.map((c) => <CreditCard key={c.id} credit={c} />)}
+          </ul>
+        </Win>
+      )}
     </div>
   )
 }
