@@ -52,25 +52,30 @@ shared:
       spotify: https://open.spotify.com/artist/0ZipFPSwHeDvell6L5WfkZ
       genre: indie
 
-    - name: Felix Music
+    - name: Felix Mavú
       instagram: felixmusic___
-      # Falta confirmar su canción en Apple Music (¿"Felix music" - Piedra papel, id 6783641894?)
+      apple: 1765963416 # CIELO
+      spotify: https://open.spotify.com/artist/3rOUYydw3tAZiq3P7tvmkR
+      genre: rock alternativo
 
     - name: Eternova
       instagram: eternova_music
       apple: 6807359997 # Fuego Insomne
       spotify: https://open.spotify.com/artist/15hVdaipWu3zE9lalFqaHO
+      genre: rock alternativo
 
     - name: Beto Reyes
       instagram: betoreyes1911
       apple: 6776245782 # San Andrés (con Edgar Huerta), su lanzamiento más reciente
       apple_artist: 1857310025 # su perfil (la canción también es de Edgar Huerta)
       spotify: https://open.spotify.com/artist/746ERtrknSMxIf9JP38tti
+      genre: house bélico
 
     - name: Ander
       instagram: ander.t_a._
       apple: 6794922804 # Falso Amor, su lanzamiento más reciente
       spotify: https://open.spotify.com/artist/69L2eHGvsQxk8cYPRUEfEW
+      genre: corridos tumbados
 
     - name: Sweetjay # siempre al final
       instagram: s.weet.jay
